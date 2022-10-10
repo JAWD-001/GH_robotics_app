@@ -7,5 +7,13 @@
   </head>
   <body>
     <h1>Login Page</h1>
+    <form method="POST">
+      {% csrf_token %}
+      {% for field in form %} 
+      <div class="form-control">
+        {{field.label_tag}}{{field}}
+      </div>
+      {% endfor %}
+      <input type="submit">
   </body>
 </html>
