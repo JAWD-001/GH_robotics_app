@@ -3,19 +3,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
+    <title>Document</title>
   </head>
   <body>
-    <h1>Login Page</h1>
+    <h1>Create an Account</h1>
     <form method="POST">
       {% csrf_token %}
-      {% for field in form %} 
+      {% for field in form %}
       <div class="form-control">
-        {{field.label_tag}}{{field}}
-      </div>
+      {{field.label_tag}}{{field}}
       {% endfor %}
       <input type="submit">
-      <div>
-      <a href="{% url 'login:create' %}">Creae an account</a>
   </body>
 </html>
