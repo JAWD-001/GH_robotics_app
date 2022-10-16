@@ -1,0 +1,33 @@
+.outside {
+  border: 5px solid #004712;
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  max-width: 70%;
+  height: auto;
+}
+
+.header {
+  text-align: center;
+  color: #004712;
+  font-family: Proxima Nova;
+  font-size: large;
+}
+
+.btn {
+  background-color: #004712; /* Green */
+  border: none;
+  color: white;
+  padding: 20px 100px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: flex-start;
+}

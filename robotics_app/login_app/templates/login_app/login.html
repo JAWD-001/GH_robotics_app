@@ -1,21 +1,31 @@
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
+    <link rel='stylesheet' href="{% static 'login_app/custom.css' %}"
   </head>
-  <body>
-    <h1>Login Page</h1>
-    <form method="POST">
-      {% csrf_token %}
-      {% for field in form %} 
-      <div class="form-control">
+  {% block content %}
+  <body class="outside">
+    <div class="header">
+      <img
+        src="{% static 'login_app/pine_crest_school.jpg' %}"
+        alt="'pine crest schoo logo"
+        class="img"
+      />
+      <h1>ROBOTICS</h1>
+      <div class="form" <form method="POST">
+        {% csrf_token %} {% for field in form %} <div class=""">
         {{field.label_tag}}{{field}}
       </div>
       {% endfor %}
-      <input type="submit">
+      <input type="submit" class="btn" />
       <div>
-      <a href="{% url 'login:create' %}">Creae an account</a>
+        <a href="{% url 'login:create' %}">Creae an account</a>
+      </div>
+    </div>
   </body>
+  {% endblock %}
 </html>
