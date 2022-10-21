@@ -1,7 +1,5 @@
 .outside {
   border: 5px solid #004712;
-  display: flex;
-  flex-direction: column;
 }
 
 .img {
@@ -14,15 +12,23 @@
   color: #004712;
   font-family: Proxima Nova;
   font-size: large;
+  margin-bottom: 0;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0;
+  color: #004712;
 }
 
 .btn {
   background-color: #004712; /* Green */
   border: none;
   color: white;
-  padding: 20px 100px;
+  padding: 10px 150px;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
+  margin-top: 0px;
 }
 
 .form {
@@ -30,4 +36,16 @@
   flex-direction: column;
   align-items: center;
   align-content: flex-start;
+}
+
+#id_username {
+  width: 350px;
+  height: 35px;
+  margin: 5px;
+}
+
+#id_password {
+  width: 350px;
+  height: 35px;
+  margin: 5px;
 }

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel='stylesheet' href="{% static 'login_app/custom.css' %}"
+    <link rel='stylesheet' href="{% static 'login_app/custom.css' %}">
   </head>
   {% block content %}
   <body class="outside">
@@ -15,16 +15,18 @@
         alt="'pine crest schoo logo"
         class="img"
       />
-      <h1>ROBOTICS</h1>
-      <div class="form" <form method="POST">
-        {% csrf_token %} {% for field in form %} <div class=""">
-        {{field.label_tag}}{{field}}
-      </div>
-      {% endfor %}
-      <input type="submit" class="btn" />
-      <div>
-        <a href="{% url 'login:create' %}">Creae an account</a>
-      </div>
+    </div>
+      <h1 class="title">ROBOTICS</h1>
+      <div class="form">
+      <form method="POST">
+        <div>
+          {% csrf_token %} {% for field in form %}{{field}}
+        </div>
+        {% endfor %}
+        <div class="form">
+        <input type="submit" class="btn" />
+      </form>
+      <a href="{% url 'login:create' %}">Create an account</a>
     </div>
   </body>
   {% endblock %}
