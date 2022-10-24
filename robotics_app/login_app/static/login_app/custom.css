@@ -25,27 +25,29 @@
   background-color: #004712; /* Green */
   border: none;
   color: white;
-  padding: 10px 150px;
   text-align: center;
   font-size: 20px;
-  margin-top: 0px;
+  width: 40vw;
+  height: 5vh;
+  margin-bottom: 10px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  align-content: flex-start;
+  font-size: 20px;
 }
 
 #id_username {
-  width: 350px;
-  height: 35px;
+  width: 40vw;
+  height: 5vh;
   margin: 5px;
 }
 
 #id_password {
-  width: 350px;
-  height: 35px;
+  width: 40vw;
+  height: 5vh;
   margin: 5px;
 }
