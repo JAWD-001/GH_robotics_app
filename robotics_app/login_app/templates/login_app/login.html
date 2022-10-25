@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel='stylesheet' href="{% static 'login_app/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
   </head>
   {% block content %}
   <body class="outside">
@@ -16,15 +16,24 @@
         class="img"
       />
     </div>
-      <h1 class="title">ROBOTICS</h1>
-      <div class="form">
+    <h1 class="title">ROBOTICS</h1>
+    <div class="form">
       <form method="POST">
-        <div>
-          {% csrf_token %} {% for field in form %}{{field}}
+        <div class="form_field">
+          {% csrf_token %}
+          <!-- {% for field in form %}{{field}}</div>{% endfor %} -->
+          {{form.username}}
         </div>
-        {% endfor %}
-        <div class="form">
-        <input type="submit" class="btn" />
+        <div class="forgot">
+          <a href="">Forgot Username?</a>
+        </div>
+        <div class="form_field">{{form.password}}</div>
+        <div class="forgot">
+          <a href="">Forgot Password?</a>
+        </div>
+        <div class="form_field">
+          <input type="submit" class="btn" />
+        </div>
       </form>
       <a href="{% url 'login:create' %}">Create an account</a>
     </div>
