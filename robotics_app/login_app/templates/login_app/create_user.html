@@ -1,19 +1,23 @@
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Create an Account</title>
+    <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
   </head>
+  {% block content %}
   <body>
-    <h1>Create an Account</h1>
-    <form method="POST">
+    <h1 class="header">CREATE AN ACCOUNT</h1>
+    <form method="POST" class="form">
       {% csrf_token %}
       {% for field in form %}
       <div class="form-control">
-      {{field.label_tag}}{{field}}
+      {{field}}
       {% endfor %}
       <div>
-      <input type="submit">
+      <input type="submit" class="btn">
   </body>
+  {% endblock %}
 </html>

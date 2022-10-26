@@ -9,3 +9,7 @@ class Users(models.Model):
     password = models.CharField(max_length=50, blank=False)
     email = models.EmailField(unique=True, blank=False)
     
+class Summaries(models.Model):
+    id = models.BigAutoField(primary_key=True)
+    subteam = models.CharField(max_length=2)
+    

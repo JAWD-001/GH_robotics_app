@@ -19,11 +19,7 @@
     <h1 class="title">ROBOTICS</h1>
     <div class="form">
       <form method="POST">
-        <div class="form_field">
-          {% csrf_token %}
-          <!-- {% for field in form %}{{field}}</div>{% endfor %} -->
-          {{form.username}}
-        </div>
+        <div class="form_field">{% csrf_token %} {{form.username}}</div>
         <div class="forgot">
           <a href="">Forgot Username?</a>
         </div>
