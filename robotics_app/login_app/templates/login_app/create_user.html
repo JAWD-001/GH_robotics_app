@@ -8,16 +8,16 @@
     <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
   </head>
   {% block content %}
-  <body>
-    <h1 class="header">CREATE AN ACCOUNT</h1>
+  <body class="outside">
+    <h1 class="title title2">CREATE AN ACCOUNT</h1>
     <form method="POST" class="form">
-      {% csrf_token %}
-      {% for field in form %}
-      <div class="form-control">
-      {{field}}
-      {% endfor %}
-      <div>
-      <input type="submit" class="btn">
+      {% csrf_token %} {% for field in form %}
+      <div class="form_field">{{field}} {% endfor %}</div>
+      <input type="submit" class="btn" />
+    </form>
+    <div>
+      <a class="login_link" href="{% url 'login:login' %}">Back to Login</a>
+    </div>
   </body>
   {% endblock %}
 </html>

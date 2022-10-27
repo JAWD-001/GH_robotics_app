@@ -21,6 +21,11 @@
   color: #004712;
 }
 
+.title2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
 .btn {
   background-color: #004712; /* Green */
   border: none;
@@ -59,4 +64,8 @@ a {
 
 .forgot {
   margin-bottom: 12px;
+}
+
+.login_link {
+  margin-top: 20px;
 }

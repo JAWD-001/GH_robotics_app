@@ -12,6 +12,8 @@ class LoginForm(ModelForm):
         }
         
 class CreateUserForm(ModelForm):
+    confirm_email_extra_field = forms.CharField(widget=TextInput(attrs={'placeholder':'Confirm Email'}))
+    confirm_password_extra_field = forms.CharField(widget=TextInput(attrs={'placeholder':'Confirm Password'}))
     class Meta:
         model = Users
         fields = '__all__'
