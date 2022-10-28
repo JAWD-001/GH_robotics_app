@@ -7,9 +7,9 @@ from django.contrib.auth.password_validation import validate_password
 class LoginForm(ModelForm):
     class Meta:
         model = Users
-        fields = ['USERNAME_FIELD', 'password1']
+        fields = ['username', 'password1']
         widgets = {
-            'USERNAME_FIELD':TextInput(attrs={'placeholder': 'Username'}),
+            'username':TextInput(attrs={'placeholder': 'Username'}),
             'password1':PasswordInput(attrs={'placeholder': 'Password'}),
         }
         
@@ -20,11 +20,11 @@ class CreateUserForm(UserCreationForm):
 
     class Meta:
         model = Users
-        fields = ['first_name','last_name','USERNAME_FIELD','password1','password2','email', 'confirm_email']
+        fields = ['first_name','last_name','username','password1','password2','email', 'confirm_email']
         widgets = {
             'first_name':TextInput(attrs={'placeholder': 'First Name'}),
             'last_name':TextInput(attrs={'placeholder':'Last Name'}),
-            'USERNAME_FIELD':TextInput(attrs={'placeholder':'Username'}),
+            'username':TextInput(attrs={'placeholder':'Username'}),
             'email':TextInput(attrs={'placeholder':'Email'}),
         }
 
