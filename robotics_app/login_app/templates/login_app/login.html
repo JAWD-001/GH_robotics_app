@@ -19,11 +19,11 @@
     <h1 class="title">ROBOTICS</h1>
     <div class="form">
       <form method="POST">
-        <div class="form_field">{% csrf_token %} {{form.username}}</div>
+        <div class="form_field">{% csrf_token %} {{form.USERNAME_FIELD}}</div>
         <div class="forgot">
           <a href="">Forgot Username?</a>
         </div>
-        <div class="form_field">{{form.password}}</div>
+        <div class="form_field">{{form.password1}}</div>
         <div class="forgot">
           <a href="">Forgot Password?</a>
         </div>

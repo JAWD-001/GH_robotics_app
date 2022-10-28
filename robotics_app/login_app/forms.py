@@ -10,7 +10,7 @@ class LoginForm(ModelForm):
         fields = ['USERNAME_FIELD', 'password1']
         widgets = {
             'USERNAME_FIELD':TextInput(attrs={'placeholder': 'Username'}),
-            'password1':TextInput(attrs={'placeholder': 'Password'}),
+            'password1':PasswordInput(attrs={'placeholder': 'Password'}),
         }
         
 class CreateUserForm(UserCreationForm):
@@ -18,7 +18,6 @@ class CreateUserForm(UserCreationForm):
     password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
     password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
 
-    #confirm_password= forms.CharField(widget=TextInput(attrs={'placeholder':'Confirm Password'}))
     class Meta:
         model = Users
         fields = ['first_name','last_name','USERNAME_FIELD','password1','password2','email', 'confirm_email']
@@ -26,8 +25,6 @@ class CreateUserForm(UserCreationForm):
             'first_name':TextInput(attrs={'placeholder': 'First Name'}),
             'last_name':TextInput(attrs={'placeholder':'Last Name'}),
             'USERNAME_FIELD':TextInput(attrs={'placeholder':'Username'}),
-            'password1': PasswordInput(attrs={'placeholder': 'Password from numbers and letters of the Latin alphabet'}),
-            'password2': PasswordInput(attrs={'placeholder': 'Password confirmation'}),
             'email':TextInput(attrs={'placeholder':'Email'}),
         }
 
