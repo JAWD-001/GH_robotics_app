@@ -7,7 +7,7 @@ from django.contrib.auth.password_validation import validate_password
 class LoginForm(ModelForm):
     class Meta:
         model = Users
-        fields = ['username', 'password1']
+        fields = ['username', 'password']
         widgets = {
             'username':TextInput(attrs={'placeholder': 'Username'}),
             'password1':PasswordInput(attrs={'placeholder': 'Password'}),
