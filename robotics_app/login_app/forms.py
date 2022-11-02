@@ -1,4 +1,4 @@
-from django.forms import ModelForm, TextInput, PasswordInput
+from django.forms import ModelForm, TextInput, PasswordInput, EmailField
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordResetForm
 from django import forms
 from .models import Users, Summaries
@@ -44,11 +44,11 @@ class SummaryNotesForm(ModelForm):
         fields = '__all__'
         widgets ={}
         
-class ForgotPasswordForm(PasswordResetForm):
+class CustomPasswordResetForm(PasswordResetForm):
     class Meta:
-        model=Users
-        fields='email'
-        widgets ={
-            'email':TextInput(attrs={'placeholder':'Email'})
+        model = Users
+        fields = ['email']
+        widgets = {
+            'email':TextInput(attrs={'placeholder':'Email'}),
         }
     
