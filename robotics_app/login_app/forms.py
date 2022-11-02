@@ -1,5 +1,5 @@
 from django.forms import ModelForm, TextInput, PasswordInput
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordResetForm
 from django import forms
 from .models import Users, Summaries
 from django.contrib.auth.password_validation import validate_password
@@ -18,7 +18,7 @@ class LoginForm(ModelForm):
         }
         
 class CreateUserForm(UserCreationForm):
-    confirm_email = forms.CharField(widget=TextInput(attrs={'placeholder':'Confirm Email'}))
+    confirm_email = forms.EmailField(widget=TextInput(attrs={'placeholder':'Confirm Email'}))
     password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
     password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
 
@@ -43,4 +43,12 @@ class SummaryNotesForm(ModelForm):
         model=Summaries
         fields = '__all__'
         widgets ={}
+        
+class ForgotPasswordForm(PasswordResetForm):
+    class Meta:
+        model=Users
+        fields='email'
+        widgets ={
+            'email':TextInput(attrs={'placeholder':'Email'})
+        }
     
