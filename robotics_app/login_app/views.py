@@ -13,7 +13,7 @@ class LoginFormView(LoginView):
     form_class = LoginForm
     template_name = 'login_app/login.html'
     redirect_authenticated_user = True
-    success_url = 'login'
+    success_url = reverse_lazy('password_reset')
     
     
 class CreateUserView(CreateView):
