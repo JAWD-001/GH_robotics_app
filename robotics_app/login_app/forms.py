@@ -1,5 +1,5 @@
 from django.forms import ModelForm, TextInput, PasswordInput, EmailField
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordResetForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordResetForm, AuthenticationForm
 from django import forms
 from .models import Users, Summaries
 from django.contrib.auth.password_validation import validate_password
@@ -8,7 +8,7 @@ from django.contrib.auth import get_user_model
 
 Users = get_user_model()
 
-class LoginForm(ModelForm):
+class LoginForm(AuthenticationForm):
     class Meta:
         model = Users
         fields = ['username', 'password']
@@ -16,6 +16,7 @@ class LoginForm(ModelForm):
             'username':TextInput(attrs={'placeholder': 'Username'}),
             'password':PasswordInput(attrs={'placeholder': 'Password'}),
         }
+        
         
 class CreateUserForm(UserCreationForm):
     confirm_email = forms.EmailField(widget=TextInput(attrs={'placeholder':'Confirm Email'}))
@@ -38,11 +39,6 @@ class CustomUserChangeForm(UserChangeForm):
         model = Users
         fields = '__all__'
           
-class SummaryNotesForm(ModelForm):
-    class Meta:
-        model=Summaries
-        fields = '__all__'
-        widgets ={}
         
 class CustomPasswordResetForm(PasswordResetForm):
     class Meta:
@@ -52,3 +48,9 @@ class CustomPasswordResetForm(PasswordResetForm):
             'email':TextInput(attrs={'placeholder':'Email'}),
         }
     
+    
+class SummaryNotesForm(ModelForm):
+    class Meta:
+        model=Summaries
+        fields = '__all__'
+        widgets ={}

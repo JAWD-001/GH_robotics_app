@@ -25,7 +25,7 @@
         </div>
         <div class="form_field">{{form.password}}</div>
         <div class="forgot">
-          <a href="">Forgot Password?</a>
+          <a href="{% url 'login:password_reset' %}">Forgot Password?</a>
         </div>
         <div class="form_field">
           <input type="submit" class="btn" />
