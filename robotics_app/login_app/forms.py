@@ -9,12 +9,12 @@ from django.contrib.auth import get_user_model
 Users = get_user_model()
 
 class LoginForm(AuthenticationForm):
-    class Meta:
+    class Meta(AuthenticationForm):
         model = Users
         fields = ['username', 'password']
         widgets = {
-            'username':TextInput(attrs={'placeholder': 'Username'}),
-            'password':PasswordInput(attrs={'placeholder': 'Password'}),
+            'username':TextInput(attrs={'placeholder':'Username'}),
+             'password':PasswordInput(attrs={'placeholder':'Password from model'}),
         }
         
         
@@ -35,7 +35,7 @@ class CreateUserForm(UserCreationForm):
         }
         
 class CustomUserChangeForm(UserChangeForm):
-    class Meta(UserCreationForm.Meta):
+    class Meta(UserChangeForm.Meta):
         model = Users
         fields = '__all__'
           
