@@ -5,7 +5,7 @@ from login_app.models import Users
 from django.urls import reverse_lazy
 
 
-from django.contrib.auth.views import LoginView, PasswordResetView
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView
 from django.contrib.messages.views import SuccessMessageMixin
 # Create your views here.
 
@@ -25,4 +25,8 @@ class LoginFormView(LoginView):
 class CustomPasswordResetView(PasswordResetView, SuccessMessageMixin):
     form_class = CustomPasswordResetForm
     template_name = 'login_app/password_reset_form.html'
-    success_url = reverse_lazy('login:login.html')
+    success_url = reverse_lazy('login:password_reset_done.html')
+    
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'login_app/password_reset_done.html'
+    
