@@ -9,13 +9,13 @@ from django.contrib.auth import get_user_model
 Users = get_user_model()
 
 class LoginForm(AuthenticationForm):
-    class Meta(AuthenticationForm):
-        model = Users
-        fields = ['username', 'password']
-        widgets = {
-            'username':TextInput(attrs={'placeholder':'Username'}),
-             'password':PasswordInput(attrs={'placeholder':'Password from model'}),
-        }
+    username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+
+    class Meta:
+        model = AuthenticationForm
+        AuthenticationFormFields = ('username', 'password')
+        exclude = []
         
         
 class CreateUserForm(UserCreationForm):
@@ -41,8 +41,9 @@ class CustomUserChangeForm(UserChangeForm):
           
         
 class CustomPasswordResetForm(PasswordResetForm):
+    email = forms.EmailField(widget=TextInput(attrs={'placeholder':'Email'}))
     class Meta:
-        model = Users
+        model = PasswordResetForm
         fields = ['email']
         widgets = {
             'email':TextInput(attrs={'placeholder':'Email'}),
