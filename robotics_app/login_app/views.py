@@ -19,14 +19,19 @@ class LoginFormView(LoginView):
     form_class = LoginForm
     template_name = 'login_app/login.html'
     redirect_authenticated_user = True
-    success_url = reverse_lazy('password_reset')
+    success_url = reverse_lazy('login:password_reset')
 
 
 class CustomPasswordResetView(PasswordResetView, SuccessMessageMixin):
     form_class = CustomPasswordResetForm
+    email_template_name = 'login/password_reset_email.html'
     template_name = 'login_app/password_reset_form.html'
     success_url = reverse_lazy('login:password_reset_done.html')
     
 class CustomPasswordResetDoneView(PasswordResetDoneView):
-    template_name = 'login_app/password_reset_done.html'
+    template_name = 'password_reset_done.html'
+
+    
+    
+    
     
