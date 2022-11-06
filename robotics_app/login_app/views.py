@@ -24,12 +24,12 @@ class LoginFormView(LoginView):
 
 class CustomPasswordResetView(PasswordResetView, SuccessMessageMixin):
     form_class = CustomPasswordResetForm
-    email_template_name = 'login/password_reset_email.html'
+    email_template_name = 'login_app/password_reset_email.html'
     template_name = 'login_app/password_reset_form.html'
-    success_url = reverse_lazy('login:password_reset_done.html')
+    success_url = reverse_lazy('login:password_reset_done')
     
 class CustomPasswordResetDoneView(PasswordResetDoneView):
-    template_name = 'password_reset_done.html'
+    template_name = 'login_app/password_reset_done.html'
 
     
     
