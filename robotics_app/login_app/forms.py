@@ -20,13 +20,13 @@ class LoginForm(AuthenticationForm):
         
 class CreateUserForm(UserCreationForm):
     confirm_email = forms.EmailField(widget=TextInput(attrs={'placeholder':'Confirm Email'}))
-    password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+    password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password - must be at least 9 alphanumeric characters'}))
     password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
 
     class Meta(UserCreationForm.Meta):
-        model = Users
-        fields = ['first_name','last_name','username', 'password','email', 'confirm_email']
-        widgets = {
+       model = Users
+       fields = ['first_name','last_name','username','email', 'confirm_email']
+       widgets = {
             'first_name':TextInput(attrs={'placeholder': 'First Name'}),
             'last_name':TextInput(attrs={'placeholder':'Last Name'}),
             'username':TextInput(attrs={'placeholder':'Username'}),
