@@ -14,7 +14,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 class CreateUserView(CreateView):
     form_class = CreateUserForm
     template_name = 'login_app/create_user.html'
-    success_url = reverse_lazy('login:login.html')
+    success_url = reverse_lazy('login:home')
 
 
 class LoginFormView(LoginView):
