@@ -24,9 +24,9 @@ class CreateUserForm(UserCreationForm):
     password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
 
     class Meta(UserCreationForm.Meta):
-       model = Users
-       fields = ['first_name','last_name','username','email', 'confirm_email']
-       widgets = {
+        model = Users
+        fields = ['first_name','last_name','username','email', 'confirm_email']
+        widgets = {
             'first_name':TextInput(attrs={'placeholder': 'First Name'}),
             'last_name':TextInput(attrs={'placeholder':'Last Name'}),
             'username':TextInput(attrs={'placeholder':'Username'}),
@@ -38,7 +38,6 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
         model = Users
         fields = '__all__'
-          
         
 class CustomPasswordResetForm(PasswordResetForm):
     email = forms.EmailField(widget=TextInput(attrs={'placeholder':'Email'}))
