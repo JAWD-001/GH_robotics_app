@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, FormView, CreateView
 from django.contrib.auth.views import PasswordResetConfirmView
-from .forms import LoginForm, CreateUserForm, CustomPasswordResetForm
+from .forms import LoginForm, CreateUserForm, CustomPasswordResetForm, ForgotUsernameForm
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from login_app.models import Users
 from django.urls import reverse_lazy
@@ -42,4 +42,11 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
         template_name = "login_app/password_reset_complete.html"
 
-    
+class ForgotUsernameView(PasswordResetView, SuccessMessageMixin):
+    form_class = ForgotUsernameForm
+    email_template_name = 'login_app/forgot_username_email.html'
+    template_name = 'login_app/forgot_username_form.html'
+    success_url = reverse_lazy('login:forgot_username_done')
+
+class ForgotUsernameDoneView(PasswordResetDoneView):
+    template_name = 'login_app/forgot_username_done.html'

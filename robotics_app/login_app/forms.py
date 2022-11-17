@@ -47,8 +47,19 @@ class CustomPasswordResetForm(PasswordResetForm):
         widgets = {
             'email':TextInput(attrs={'placeholder':'Email'}),
         }
-    
-    
+
+
+class ForgotUsernameForm(PasswordResetForm):
+    email = forms.EmailField(widget=TextInput(attrs={'placeholder': 'Email'}))
+
+    class Meta:
+        model = PasswordResetForm
+        fields = ['email']
+        widgets = {
+            'email': TextInput(attrs={'placeholder': 'Email'}),
+        }
+
+
 class SummaryNotesForm(ModelForm):
     class Meta:
         model=Summaries

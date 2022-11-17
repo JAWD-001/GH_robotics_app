@@ -21,7 +21,7 @@
       <form method="POST">
         <div class="form_field">{% csrf_token %} {{form.username}}</div>
         <div class="forgot">
-          <a href="">Forgot Username?</a>
+          <a href="{% url 'login:forgot_username' %}">Forgot Username?</a>
         </div>
         <div class="form_field">{{form.password}}</div>
         <div class="forgot">
