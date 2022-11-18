@@ -23,10 +23,18 @@ def test_PasswordResetView(client):
     response = client.get(url)
     assert response.status_code == 200
 
-def test_PasswordResetDone(client):
+def test_PasswordResetDoneView(client):
     url = reverse('login:password_reset_done')
     response = client.get(url)
     assert response.status_code == 200
 
+def test_UsernameFormView(client):
+    url = reverse('login:forgot_username')
+    response = client.get(url)
+    assert response.status_code == 200
 
+def test_ForgotUsernameDoneView(client):
+    url = reverse('login:forgot_username_done')
+    response = client.get(url)
+    assert response.status_code == 200
 
