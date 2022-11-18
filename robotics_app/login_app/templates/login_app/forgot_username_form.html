@@ -9,8 +9,8 @@
   </head>
   {% block content %}
   <body class="outside">
-    <h1 class="title">FORGOT USERNAME?</h1>
-    <p class="title2 header">ENTER YOUR EMAIL BELOW AND WE WILL SEND YOU AN EMAIL WITH IT!</p>
+    <h1 class="title title2">FORGOT USERNAME?</h1>
+    <p class="title2 header">ENTER YOUR EMAIL BELOW AND WE WILL SEND YOU AN EMAIL WITH YOUR USERNAME!</p>
     <div class="form">
     <form method="POST">
         {% csrf_token %} {% for field in form %}
