@@ -9,13 +9,16 @@
   </head>
   <body class="outside">
     {% block content %}
-    <h1 class="title2 title">Forgot Username</h1>
-    <p class="title2 header">
-      Your username information has been sent to your email if
-      it is active. Please check your inbox shortly!
+    <div class="title2">
+    <h1 class=" title">Your Username Has Been Sent</h1>
+    <p class="header">
+      Your username information has been sent to your email.<br> If,
+      it is active you will receive an email soon. Please check your inbox shortly!
     </p>
-    <a href="{% url 'login:home' %}"></a>
-
+    </div>
+    <div class="login_link">
+      <a href="{% url 'login:home' %}">Back to Login</a>
+    </div>
     {% endblock %}
   </body>
 </html>
