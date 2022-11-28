@@ -94,9 +94,5 @@ a:visited {
 }
 
 .errorlist {
-  color: #004712;
-}
-
-.error input, .error select {
-  border: 2px red solid;
+  color: red;
 }

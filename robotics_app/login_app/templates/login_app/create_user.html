@@ -11,12 +11,23 @@
   <body class="outside">
     <h1 class="title title2">CREATE AN ACCOUNT</h1>
     <form method="POST" class="form">
-      {% csrf_token %} {% for field in form %}
+      {% csrf_token %}
+      {% for field in form %}
       <div class="form_field">{{field}} {% endfor %}</div>
       <div class="form_field">
         <input type="submit" class="btn" />
       </div>
     </form>
+    {% if form.errors %}
+    <ul class="errorlist">
+      {% for error in form.errors %}
+      <li><strong> {{error}}</strong></li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+
+
+
     {{form.errors}}
     <div class="login_link">
       <a href="{% url 'login:home' %}">Back to Login</a>
