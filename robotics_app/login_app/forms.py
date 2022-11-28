@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django import forms
 from .models import Users, Summaries
 from django.contrib.auth.password_validation import validate_password
-
+from django.core.validators import MinLengthValidator
 from django.contrib.auth import get_user_model
 
 Users = get_user_model()
@@ -19,20 +19,21 @@ class LoginForm(AuthenticationForm):
         
         
 class CreateUserForm(UserCreationForm):
-    confirm_email = forms.EmailField(widget=TextInput(attrs={'placeholder':'Confirm Email'}))
-    password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password - must be at least 9 alphanumeric characters'}))
+    password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password - Min of 9 alphanumeric characters and 1 special character'}))
     password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
 
     class Meta(UserCreationForm.Meta):
         model = Users
-        fields = ['first_name','last_name','username','email', 'confirm_email']
+        fields = ['first_name','last_name','username','email', 'grad_year']
         widgets = {
             'first_name':TextInput(attrs={'placeholder': 'First Name'}),
             'last_name':TextInput(attrs={'placeholder':'Last Name'}),
             'username':TextInput(attrs={'placeholder':'Username'}),
             'email':TextInput(attrs={'placeholder':'Email'}),
+            'grad_year':TextInput(attrs={'placeholder':'Grad Year'}),
             'password':PasswordInput(attrs={'placeholder':'Password from model'}),
         }
+
         
 class CustomUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):

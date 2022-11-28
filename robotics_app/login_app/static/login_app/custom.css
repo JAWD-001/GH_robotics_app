@@ -87,3 +87,16 @@ p {
   color: #004712;
   text-align: center;
 }
+
+a:visited {
+  text-decoration: none;
+  color: royalblue;
+}
+
+.errorlist {
+  color: #004712;
+}
+
+.error input, .error select {
+  border: 2px red solid;
+}
