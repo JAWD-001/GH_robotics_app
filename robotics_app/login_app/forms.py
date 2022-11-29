@@ -22,12 +22,14 @@ class CreateUserForm(UserCreationForm):
     use_required_attribute = False
     password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password - Min of 9 alphanumeric characters and 1 special character'}))
     password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
-
     class Meta(UserCreationForm.Meta):
         model = Users
         fields = ['first_name','last_name','username','email','grad_year']
-        error_messages = {'first_name': {'required':'First name cannot be blank or null'}, 'last_name': {'required':'Last name cannot be blank or null'}, 'username':{'required': 'Username cannot be blank or null'},
-                        'email' :{'required': 'Email cannot be null or blank'}, 'grad_year': {'required': 'Grad Year cannot be blank or null'}}
+        error_messages = {
+            'first_name':{'required': 'First name cannot be blank or null', 'min_length': 'First name must be at least 2 characters long'},
+            'last_name':{'required': 'Last name cannot be blank or null','min_length': 'Last name must be at least 2 characters long'},
+            'username':{'required': 'Username cannot be blank or null', 'min_length': 'Username must be at least 2 characters long'},
+            'email':{'required': 'Email cannot be null or blank', 'required': 'Grad Year cannot be blank or null'}}
         widgets = {
             'first_name':TextInput(attrs={'placeholder': 'First Name'}),
             'last_name':TextInput(attrs={'placeholder':'Last Name'}),
