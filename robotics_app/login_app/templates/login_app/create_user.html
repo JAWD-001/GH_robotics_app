@@ -18,17 +18,11 @@
         <input type="submit" class="btn" />
       </div>
     </form>
-    {% if form.errors %}
-    <ul class="errorlist">
-      {% for error in form.errors %}
-      <li><strong> {{error}}</strong></li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-
-
-
-    {{form.errors}}
+      {% if form.errors %}
+          {% for field in form %}
+          {{ field.errors }}
+          {% endfor %}
+        {% endif %}
     <div class="login_link">
       <a href="{% url 'login:home' %}">Back to Login</a>
     </div>

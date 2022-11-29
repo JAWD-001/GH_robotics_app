@@ -96,3 +96,7 @@ a:visited {
 .errorlist {
   color: red;
 }
+
+.nobull {
+  list-style-type: none;
+}
