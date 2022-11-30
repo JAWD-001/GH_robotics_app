@@ -97,6 +97,7 @@ a:visited {
   color: red;
 }
 
-.nobull {
-  list-style-type: none;
+.login_error {
+  color: red;
+  margin-top: 2vh;
 }

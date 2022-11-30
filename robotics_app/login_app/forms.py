@@ -12,6 +12,13 @@ class LoginForm(AuthenticationForm):
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
 
+    error_messages = {
+        "invalid_login": (
+            "Please enter a correct %(username)s and password. Note that both "
+            "fields may be case-sensitive."
+        ),
+        "inactive": ("This account is inactive."),
+    }
     class Meta:
         model = AuthenticationForm
         AuthenticationFormFields = ('username', 'password')
