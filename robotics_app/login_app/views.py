@@ -14,14 +14,13 @@ from django.contrib.messages.views import SuccessMessageMixin
 class CreateUserView(CreateView):
     form_class = CreateUserForm
     template_name = 'login_app/create_user.html'
-    success_url = reverse_lazy('login:home')
+    success_url = reverse_lazy('login:login')
 
 
 class LoginFormView(LoginView):
-    form_class = LoginForm
     template_name = 'login_app/login.html'
     redirect_authenticated_user = True
-    success_url = reverse_lazy('login:password_reset')
+    next_page = reverse_lazy('login:forgot_username')
 
 
 class CustomPasswordResetView(PasswordResetView, SuccessMessageMixin):
