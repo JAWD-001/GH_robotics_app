@@ -30,4 +30,4 @@ jobs:
          SECRET_KEY: ${{ secrets.SECRET_KEY }}
       run: |
         cd robotics_app
-        pytest
+        python -m pytest
