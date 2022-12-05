@@ -13,10 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 from decouple import config
 import os
-import environ
 
-env = environ.Env()
-environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -140,10 +137,10 @@ EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = env('SENDGRID_API_KEY')
+EMAIL_HOST_PASSWORD = config('SENDGRID_API_KEY')
 
 # The email you'll be sending emails from
-DEFAULT_FROM_EMAIL = env('FROM_EMAIL', default='noreply@gmail.com')
+DEFAULT_FROM_EMAIL = config('FROM_EMAIL', default='noreply@gmail.com')
 
 #EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 #SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
