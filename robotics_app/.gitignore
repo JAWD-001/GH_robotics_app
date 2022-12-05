@@ -5,3 +5,4 @@ venv/pyvenv.cfg
 .env
 
 db.sqlite3
+/.env
