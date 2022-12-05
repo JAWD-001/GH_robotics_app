@@ -28,7 +28,6 @@ def new_user_factory(db):
         return user
     return create_app_user
 
-
 @pytest.fixture
 def new_user(db, new_user_factory):
     return new_user_factory('Test User')
