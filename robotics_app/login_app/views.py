@@ -49,3 +49,7 @@ class ForgotUsernameView(PasswordResetView, SuccessMessageMixin):
 
 class ForgotUsernameDoneView(PasswordResetDoneView):
     template_name = 'login_app/forgot_username_done.html'
+
+
+class UserHomeView(TemplateView):
+    template_name = 'login_app/base.html'
