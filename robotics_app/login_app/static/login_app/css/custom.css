@@ -1,3 +1,21 @@
+:root {
+  --primaryColor: #9C07B6;
+  --primaryDarkColor: #3D0048;
+  --primaryHoverColor: #900AA8;
+  --secondaryColor: #F9B000;
+  --baseColor: #21243D;
+  --baseFont: 'Heebo', sans-serif;
+  --titleFont: 'Courier Prime', monospace;
+  --regular: 400;
+  --medium: 500;
+  --bold: 700;
+  --black: 900;
+  --lightBg: #F1F1F1;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 .outside {
   border: 5px solid #004712;
 }
@@ -35,6 +53,19 @@
 }
 
 .btn {
+  background-color: var(--primaryColor); /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  width: 40vw;
+  height: 5vh;
+  margin-bottom: 0;
+  border-radius: 3px;
+}
+
+
+.btn-cards {
   background-color: #004712; /* Green */
   border: none;
   color: white;
@@ -101,3 +132,9 @@ a:visited {
   color: red;
   margin-top: 2vh;
 }
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+

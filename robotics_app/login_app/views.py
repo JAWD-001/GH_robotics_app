@@ -52,6 +52,6 @@ class ForgotUsernameDoneView(PasswordResetDoneView):
 
 
 class UserHomeView(LoginRequiredMixin, TemplateView):
-    template_name = 'login_app/base.html'
+    template_name = 'login_app/home.html'
     login_url = '/login/'
     redirect_field_name = 'login'
