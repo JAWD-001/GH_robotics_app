@@ -12,6 +12,7 @@
   --black: 900;
   --lightBg: #F1F1F1;
 }
+
 html {
   scroll-behavior: smooth;
 }
