@@ -1,7 +1,7 @@
 :root {
-  --primaryColor: #9C07B6;
-  --primaryDarkColor: #3D0048;
-  --primaryHoverColor: #900AA8;
+  --primaryColor: #004712;
+  --primaryDarkColor: rgba(0, 71, 18, 0.4);
+  --primaryHoverColor: #004712;
   --secondaryColor: #F9B000;
   --baseColor: #21243D;
   --baseFont: 'Heebo', sans-serif;
@@ -53,7 +53,7 @@ html {
 }
 
 .btn {
-  background-color: var(--primaryColor); /* Green */
+  background-color: #004712; /* Green */
   border: none;
   color: white;
   text-align: center;

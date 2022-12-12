@@ -150,4 +150,5 @@ DEFAULT_FROM_EMAIL = env('FROM_EMAIL', default='noreply@gmail.com')
 #SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 
 # custom
+
 LOGOUT_REDIRECT_URL = '/login/'
