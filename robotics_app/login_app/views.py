@@ -1,13 +1,13 @@
-from django.shortcuts import render
 from django.views.generic import TemplateView, FormView, CreateView
-from django.contrib.auth.views import PasswordResetConfirmView
 from .forms import LoginForm, CreateUserForm, CustomPasswordResetForm, ForgotUsernameForm
 from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from login_app.models import Users
 from django.urls import reverse_lazy
 
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetCompleteView
+
+from django.contrib.auth.views import LoginView, PasswordResetView, PasswordResetDoneView, PasswordResetCompleteView, PasswordResetConfirmView, LogoutView
 from django.contrib.messages.views import SuccessMessageMixin
 # Create your views here.
 
@@ -20,7 +20,7 @@ class CreateUserView(CreateView):
 class LoginFormView(LoginView):
     template_name = 'login_app/login.html'
     redirect_authenticated_user = True
-    next_page = reverse_lazy('login:forgot_username')
+    next_page = reverse_lazy('login:user_home')
 
 
 class CustomPasswordResetView(PasswordResetView, SuccessMessageMixin):
@@ -51,5 +51,7 @@ class ForgotUsernameDoneView(PasswordResetDoneView):
     template_name = 'login_app/forgot_username_done.html'
 
 
-class UserHomeView(TemplateView):
+class UserHomeView(LoginRequiredMixin, TemplateView):
     template_name = 'login_app/base.html'
+    login_url = '/login/'
+    redirect_field_name = 'login'
