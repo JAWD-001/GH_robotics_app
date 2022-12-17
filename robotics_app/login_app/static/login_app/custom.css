@@ -1,22 +1,12 @@
-:root {
-  --primaryColor: #004712;
-  --primaryDarkColor: rgba(0, 71, 18, 0.4);
-  --primaryHoverColor: #004712;
-  --secondaryColor: #F9B000;
-  --baseColor: #21243D;
-  --baseFont: 'Heebo', sans-serif;
-  --titleFont: 'Courier Prime', monospace;
-  --regular: 400;
-  --medium: 500;
-  --bold: 700;
-  --black: 900;
-  --lightBg: #F1F1F1;
-}
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  height: 100%;
+  font-family: Proxima Nova
+}
 .outside {
   border: 5px solid #004712;
 }
@@ -41,9 +31,29 @@ html {
   font-family: Proxima Nova;
 }
 
+.title-home {
+  text-align: left;
+  margin-top: 3vh;
+  margin-left: 3vw;
+  color: #004712;
+  font-family: Proxima Nova;
+}
+
+.title-home-subtitle {
+  text-align: left;
+  margin-top: 3vh;
+  margin-left: 3vw;
+  color: #004712;
+  font-family: Proxima Nova;
+  font-size: 20px;
+  font-weight: normal;
+}
+}
+
 .title2 {
   margin-top: 50px;
   margin-bottom: 30px;
+  font-family: Proxima Nova;
 }
 
 .password_reset_title {
@@ -133,9 +143,88 @@ a:visited {
   color: red;
   margin-top: 2vh;
 }
-
-.cards {
+.card-container{
   display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: normal;
+  justify-content: space-between;
+  align-items: center;
+  border: #004712 4px solid;
+  margin: 1px;
+  width: 40vw;
+  height: 50vh;
+}
+
+.card-title {
+  font-size: 20px;
+  height: 2vh;
+  text-align: center;
+  color: #004712;
+  font-weight: bold;
+}
+
+.card-image {
+  height: 30vh;
+  width: 25vw;
+  border: #004712 solid 2px;;
+}
+
+.card-description {
+  font-weight: normal;
+  text-align: center;
+  font-style: italic;
+}
+
+.card-button {
+  background: #004712;
+  color: white;
+  width: 40vw;
+  height: 5vh;
+  border: #004712;
+}
+
+.card-button a {
+  color: white;
+  font-size: 15px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1vh 1vw;
+}
+
+.nav a {
+  color: #004712;
+}
+
+.nav img {
+  width: 40px;
+  height: auto;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
+.nav-link {
+  margin-right: 1vw;
+  margin-left: 1vw;
+  font-size: 20px;
+}
