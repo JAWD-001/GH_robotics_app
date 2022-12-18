@@ -1,11 +1,12 @@
 
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
-  height: 100%;
-  font-family: Proxima Nova
+  font-family: Proxima Nova;
+  border: 5px solid #004712;
 }
 .outside {
   border: 5px solid #004712;
@@ -158,12 +159,12 @@ a:visited {
   align-items: center;
   border: #004712 4px solid;
   margin: 1px;
-  width: 40vw;
-  height: 50vh;
+  width: 25vw;
+  height: 42vh;
 }
 
 .card-title {
-  font-size: 20px;
+  font-size: 15px;
   height: 2vh;
   text-align: center;
   color: #004712;
@@ -171,8 +172,8 @@ a:visited {
 }
 
 .card-image {
-  height: 30vh;
-  width: 25vw;
+  height: 23vh;
+  width: 15vw;
   border: #004712 solid 2px;;
 }
 
@@ -185,7 +186,7 @@ a:visited {
 .card-button {
   background: #004712;
   color: white;
-  width: 40vw;
+  width: 25vw;
   height: 5vh;
   border: #004712;
 }
