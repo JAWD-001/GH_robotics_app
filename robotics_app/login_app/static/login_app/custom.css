@@ -161,6 +161,8 @@ a:visited {
   margin: 1px;
   width: 25vw;
   height: 42vh;
+  border-radius: 5px;
+  box-shadow: 5px 3px 20px grey;
 }
 
 .card-title {
@@ -191,9 +193,18 @@ a:visited {
   border: #004712;
 }
 
+.card-button:hover{
+  background: white;
+}
+
 .card-button a {
   color: white;
   font-size: 15px;
+}
+
+.card-button a:hover{
+  color: #004712;
+  border: #004712;
 }
 
 .nav {
@@ -228,4 +239,8 @@ a:visited {
   margin-right: 1vw;
   margin-left: 1vw;
   font-size: 20px;
+}
+
+.nav-link:hover {
+  text-shadow: grey 2px 2px 20px;
 }
