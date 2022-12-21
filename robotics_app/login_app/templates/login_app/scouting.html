@@ -4,31 +4,33 @@
 {% block content %}
 
 <body class="outside">
-    <h1 class="title-home">Welcome, {{ user.username|title }}!</h1>
+    <h1 class="title-home">Welcome, to the Scouting Hub {{ user.username|title }}!</h1>
         <h3 class="title-home-subtitle">Please select one of the options below!</h3>
 
 <div class="card-container">
     <div class="card">
-        <h1 class="card-title">Scouting Reports</h1>
+        <h1 class="card-title">Create a Report</h1>
         <div><img class="card-image">
         </div>
         <h4 class="card-description">description</h4>
-        <div class="card-button">
-            <a href="">Go to Scouting Reports
+        <button class="card-button">
+            <a href="">Create a Scouting Report
             </a>
-        </div>
+        </button>
     </div>
     <div class="card">
-        <h1 class="card-title">Build Summaries</h1>
+        <h1 class="card-title">View a Report</h1>
         <div><img class="card-image">
         </div>
         <h4 class="card-description">description</h4>
-        <div class="card-button">
-            <a class="card-button" href="">Go to Build Summaries
+        <button class="card-button">
+            <a href="">View a Scouting Report
             </a>
-        </div>
+        </button>
     </div>
 </div>
-</body>
 
-{% endblock %}
+
+
+</body>
+{% endblock content %}

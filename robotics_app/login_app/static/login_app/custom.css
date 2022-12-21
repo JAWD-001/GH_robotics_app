@@ -111,6 +111,7 @@ input {
 a {
   text-decoration: none;
   font-size: 12px;
+  color: blue;
 }
 
 .forgot {
@@ -133,7 +134,7 @@ p {
 
 a:visited {
   text-decoration: none;
-  color: royalblue;
+  color: inherit;
 }
 
 .errorlist {
@@ -186,26 +187,28 @@ a:visited {
 }
 
 .card-button {
+  display: flex;
   background: #004712;
   color: white;
   width: 25vw;
   height: 5vh;
   border: #004712;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-button:hover{
   background: white;
+  color: #004712;
 }
 
 .card-button a {
-  color: white;
-  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: inherit;
 }
 
-.card-button a:hover{
-  color: #004712;
-  border: #004712;
-}
 
 .nav {
   display: flex;
