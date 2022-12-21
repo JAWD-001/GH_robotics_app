@@ -245,5 +245,5 @@ a:visited {
 }
 
 .nav-link:hover {
-  text-shadow: grey 2px 2px 20px;
+  text-shadow: #004712 2px 2px 5px;
 }
