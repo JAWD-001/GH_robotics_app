@@ -55,3 +55,9 @@ class UserHomeView(LoginRequiredMixin, TemplateView):
     template_name = 'login_app/home.html'
     login_url = '/login/'
     redirect_field_name = 'login'
+
+class ScoutingOptionsView(LoginRequiredMixin, TemplateView):
+    template_name = 'login_app/scouting.html'
+
+class BuildOptionsView(LoginRequiredMixin, TemplateView):
+    template_name = 'login_app/build_options.html'
