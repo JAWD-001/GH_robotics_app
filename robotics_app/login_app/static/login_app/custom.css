@@ -6,10 +6,15 @@ html {
 
 body {
   font-family: Proxima Nova;
-  border: 5px solid #004712;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
 }
 .outside {
-  border: 5px solid #004712;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .img {
@@ -149,52 +154,63 @@ a:visited {
   display: flex;
   justify-content: space-evenly;
   margin-top: 5vh;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap: normal;
   justify-content: space-between;
   align-items: center;
   border: #004712 4px solid;
-  margin: 1px;
-  width: 25vw;
-  height: 42vh;
+  width: 44vw;
   border-radius: 5px;
   box-shadow: 5px 3px 20px grey;
+  margin: 0 16px;
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 80vw;
+  }
 }
 
 .card-title {
-  font-size: 15px;
+  font-size: 22px;
   height: 2vh;
   text-align: center;
   color: #004712;
   font-weight: bold;
 }
 
+.card-image {
+  text-align: center;
+}
+
 .card-image img {
-  height: auto;
-  max-width: 10px;
-  border: #004712 solid 2px;;
+  margin-top: 12px;
+  max-width: 30%;
+  border: #004712 solid 2px;
 }
 
 .card-description {
   font-weight: normal;
   text-align: center;
   font-style: italic;
+  padding: 8px;
 }
 
 .card-button {
   display: flex;
   background: #004712;
   color: white;
-  width: 25vw;
   height: 5vh;
+  width: 100%;
   border: #004712;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
 }
 
 .card-button:hover{
@@ -202,28 +218,23 @@ a:visited {
   color: #004712;
 }
 
-.card-button a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: inherit;
-}
-
-
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1vh 1vw;
+  padding: 16px 8px;
+  background-color: #004712;
 }
 
 .nav a {
-  color: #004712;
+  color: white;
 }
 
 .nav img {
   width: 40px;
+  margin-left: 1vw;
   height: auto;
+  filter:invert(1);
 }
 
 .nav-left {
@@ -240,10 +251,18 @@ a:visited {
 
 .nav-link {
   margin-right: 1vw;
-  margin-left: 1vw;
+  margin-left: 2vw;
   font-size: 20px;
 }
 
 .nav-link:hover {
   text-shadow: #004712 2px 2px 5px;
+}
+
+.footer {
+  display: flex;
+  margin: 24px 0;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
 }

@@ -9,32 +9,29 @@
     <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
 </head>
 <body class="outside">
-        <div class="nav">
-            <div class="nav-left">
-                <a href="{% url 'login:user_home' %}" >
-                    <img src="{% static 'login_app/panther_head.jpg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                </a>
-                <a class="nav-link" href="{% url 'login:user_home' %}">Build Summaries
-                </a>
-                <a class="nav-link" href="{% url 'login:user_home' %}">Scouting Reports
-                </a>
-            </div>
-            <div class="nav-right">
-                <a class="nav-link" href="{% url 'login:logout' %}">Logout
-                </a>
-            </div>
+    <div class="nav">
+        <div class="nav-left">
+            <a href="{% url 'login:user_home' %}" >
+                <img src="{% static 'login_app/panther_head.png' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            </a>
+            <a class="nav-link" href="{% url 'login:user_home' %}">Build Summaries
+            </a>
+            <a class="nav-link" href="{% url 'login:user_home' %}">Scouting Reports
+            </a>
         </div>
-    </header>
+        <div class="nav-right">
+            <a class="nav-link" href="{% url 'login:logout' %}">Logout
+            </a>
+        </div>
+    </div>
     <div>
         {% block content %}{% endblock %}
     </div>
-<div>
-    <footer>
+    <div class="footer">
         <p>
-            anadnf
+            Footer Text
         </p>
-    </footer>
-</div>
+    </div>
 </body>
 </html>
 

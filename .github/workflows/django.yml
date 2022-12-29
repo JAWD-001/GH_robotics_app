@@ -27,9 +27,9 @@ jobs:
         pip install -r robotics_app/requirements.txt
     - name: Run Tests
       env: 
-         SECRET_KEY: ${{ secrets.SECRET_KEY }}
-         SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-         FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+          FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
       run: |
         cd robotics_app
         pytest
