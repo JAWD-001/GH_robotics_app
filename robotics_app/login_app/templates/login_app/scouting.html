@@ -1,0 +1,36 @@
+{% extends 'login_app/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body class="outside">
+    <h1 class="title-home">Welcome, to the team Scouting Hub {{ user.username|title }}!</h1>
+        <h3 class="title-home-subtitle">Please select one of the options below!</h3>
+
+<div class="card-container">
+    <div class="card">
+        <h1 class="card-title">Create a Report</h1>
+        <div class="card-image"><img class="card-image" src="{% static 'login_app/recruit.svg' %}">
+        </div>
+        <h4 class="card-description">Create a new scouting report on a team!</h4>
+        <div class="card-button">
+            <a href="">Create a Scouting Report
+            </a>
+        </div>
+    </div>
+    <div class="card">
+        <h1 class="card-title">View a Report</h1>
+        <div class="card-image"><img class="card-image" src="{% static 'login_app/recruitment.svg' %}">
+        </div>
+        <h4 class="card-description">View previous scouting reports to prepare for an upcoming game!</h4>
+        <button class="card-button">
+            <a href="">View a Scouting Report
+            </a>
+        </button>
+    </div>
+</div>
+
+
+
+</body>
+{% endblock content %}

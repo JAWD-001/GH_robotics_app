@@ -1,5 +1,20 @@
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: Proxima Nova;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
 .outside {
-  border: 5px solid #004712;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .img {
@@ -19,11 +34,32 @@
   text-align: center;
   margin-top: 0;
   color: #004712;
+  font-family: Proxima Nova;
 }
+
+.title-home {
+  text-align: left;
+  margin-top: 3vh;
+  margin-left: 3vw;
+  color: #004712;
+  font-family: Proxima Nova;
+}
+
+.title-home-subtitle {
+  text-align: left;
+  margin-top: 3vh;
+  margin-left: 3vw;
+  color: #004712;
+  font-family: Proxima Nova;
+  font-size: 20px;
+  font-weight: normal;
+}
+
 
 .title2 {
   margin-top: 50px;
   margin-bottom: 30px;
+  font-family: Proxima Nova;
 }
 
 .password_reset_title {
@@ -34,6 +70,19 @@
 }
 
 .btn {
+  background-color: #004712; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  width: 40vw;
+  height: 5vh;
+  margin-bottom: 0;
+  border-radius: 3px;
+}
+
+
+.btn-cards {
   background-color: #004712; /* Green */
   border: none;
   color: white;
@@ -67,6 +116,7 @@ input {
 a {
   text-decoration: none;
   font-size: 12px;
+  color: blue;
 }
 
 .forgot {
@@ -85,4 +135,134 @@ p {
   font-size: 12px;
   color: #004712;
   text-align: center;
+}
+
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.errorlist {
+  color: red;
+}
+
+.login_error {
+  color: red;
+  margin-top: 2vh;
+}
+.card-container{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: #004712 4px solid;
+  width: 44vw;
+  border-radius: 5px;
+  box-shadow: 5px 3px 20px grey;
+  margin: 0 16px;
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 80vw;
+  }
+}
+
+.card-title {
+  font-size: 22px;
+  height: 2vh;
+  text-align: center;
+  color: #004712;
+  font-weight: bold;
+}
+
+.card-image {
+  text-align: center;
+}
+
+.card-image img {
+  margin-top: 12px;
+  max-width: 30%;
+  border: #004712 solid 2px;
+}
+
+.card-description {
+  font-weight: normal;
+  text-align: center;
+  font-style: italic;
+  padding: 8px;
+}
+
+.card-button {
+  display: flex;
+  background: #004712;
+  color: white;
+  height: 5vh;
+  width: 100%;
+  border: #004712;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.card-button:hover{
+  background: white;
+  color: #004712;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 8px;
+  background-color: #004712;
+}
+
+.nav a {
+  color: white;
+}
+
+.nav img {
+  width: 40px;
+  margin-left: 1vw;
+  height: auto;
+  filter:invert(1);
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  margin-right: 1vw;
+  margin-left: 2vw;
+  font-size: 20px;
+}
+
+.nav-link:hover {
+  text-shadow: #004712 2px 2px 5px;
+}
+
+.footer {
+  display: flex;
+  margin: 24px 0;
+  justify-content: center;
+  align-items: flex-end;
+  flex-grow: 1;
 }

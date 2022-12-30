@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %} {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
+</head>
+<body class="outside">
+    <div class="nav">
+        <div class="nav-left">
+            <a href="{% url 'login:user_home' %}" >
+                <img src="{% static 'login_app/panther_head.png' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            </a>
+            <a class="nav-link" href="{% url 'login:build_options' %}">Build Summaries
+            </a>
+            <a class="nav-link" href="{% url 'login:scouting_options' %}">Scouting Reports
+            </a>
+        </div>
+        <div class="nav-right">
+            <a class="nav-link" href="{% url 'login:logout' %}">Logout
+            </a>
+        </div>
+    </div>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+        <p>
+            Footer Text
+        </p>
+    </div>
+</body>
+</html>
+

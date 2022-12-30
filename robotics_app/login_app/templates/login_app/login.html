@@ -12,7 +12,7 @@
     <div class="header">
       <img
         src="{% static 'login_app/pine_crest_school.jpg' %}"
-        alt="'pine crest schoo logo"
+        alt="'pine crest school logo"
         class="img"
       />
     </div>
@@ -21,7 +21,7 @@
       <form method="POST">
         <div class="form_field">{% csrf_token %} {{form.username}}</div>
         <div class="forgot">
-          <a href="">Forgot Username?</a>
+          <a href="{% url 'login:forgot_username' %}">Forgot Username?</a>
         </div>
         <div class="form_field">{{form.password}}</div>
         <div class="forgot">
@@ -31,6 +31,13 @@
           <input type="submit" class="btn" />
         </div>
       </form>
+      <div class="errorlist" style="text-align: center; margin-bottom: 20px;">
+        {% if form.errors %}
+          {% for error in form.non_field_errors %}
+            {{error}}
+          {% endfor %}
+        {% endif %}
+      </div>
       <div>
         <a href="{% url 'login:create' %}">Create an account</a>
       </div>

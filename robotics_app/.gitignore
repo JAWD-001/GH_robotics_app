@@ -1,1 +1,8 @@
+venv
+venv/pyvenv.cfg
+../.vs
+
 .env
+
+db.sqlite3
+/.env
