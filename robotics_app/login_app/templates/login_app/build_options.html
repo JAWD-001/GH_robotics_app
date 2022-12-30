@@ -9,26 +9,27 @@
 
 <div class="card-container">
     <div class="card">
-        <h1 class="card-title">Create a Summary</h1>
-        <div><img class="card-image">
+        <h1 class="card-title">Make a New Build Summary</h1>
+        <div class="card-image"><img src="{% static 'login_app/prototype.svg' %}">
         </div>
-        <h4 class="card-description">description</h4>
+        <h4 class="card-description">Make a new Build Summary for the Engineering Workbook!</h4>
         <div class="card-button">
-            <a href="">Create a Build Summary
+            <a class="card-button" href="">Create a New Entry
             </a>
         </div>
     </div>
     <div class="card">
-        <h1 class="card-title">View a Summary</h1>
-        <div><img class="card-image">
+        <h1 class="card-title">View a Build Summary</h1>
+        <div class="card-image"><img src="{% static 'login_app/seo.svg' %}">
         </div>
-        <h4 class="card-description">description</h4>
-        <button class="card-button">
-            <a href="">View a Build Summary
+        <h4 class="card-description">Review older entries in the Engineering Workbook!</h4>
+        <div class="card-button">
+            <a class="card-button" href="{% url 'login:build_options' %}">Go to Build Summaries
             </a>
-        </button>
+        </div>
     </div>
 </div>
+</body>
 
 
 

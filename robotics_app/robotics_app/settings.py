@@ -132,7 +132,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'login_app.Users'
 
-
+#APPLICATION EMAIL SETTINGS
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 #EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
@@ -149,6 +149,6 @@ DEFAULT_FROM_EMAIL = env('FROM_EMAIL', default='noreply@gmail.com')
 #EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 #SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY")
 
-# custom
+# custom logout redirect
 
 LOGOUT_REDIRECT_URL = '/login/'
