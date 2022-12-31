@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import LoginFormView, CreateUserView, CustomPasswordResetView, CustomPasswordResetDoneView, CustomPasswordResetConfirmView, \
-    CustomPasswordResetCompleteView, ForgotUsernameView, ForgotUsernameDoneView, UserHomeView, ScoutingOptionsView, BuildOptionsView
+    CustomPasswordResetCompleteView, ForgotUsernameView, ForgotUsernameDoneView, UserHomeView, ScoutingOptionsView, BuildOptionsView, \
+    ScoutingReportsView, BuildSummariesView
 from django.contrib.auth import views as auth_views
 from .forms import LoginForm
 
@@ -24,6 +25,10 @@ urlpatterns = [
 
 #URL ROUTING FOR SCOUTING AND BUILD REPORTS
     path('home/', UserHomeView.as_view(), name='user_home'),
-    path('scouting_options', ScoutingOptionsView.as_view(), name='scouting_options'),
-    path('build_options', BuildOptionsView.as_view(), name='build_options')
+    path('scouting_options/', ScoutingOptionsView.as_view(), name='scouting_options'),
+    path('build_options/', BuildOptionsView.as_view(), name='build_options'),
+
+#URL ROUTING FOR SCOUTING AND BUILDING LIST VIEWS
+    path('scouting_reports/', ScoutingReportsView.as_view(), name='scouting_reports'),
+    path('build_summaries/', BuildSummariesView.as_view(), name='build_summaries')
 ]
