@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import  AbstractUser
+from django.contrib.auth.models import AbstractUser
 from django.core.validators import EmailValidator, MinLengthValidator
 from django.contrib.auth.password_validation import validate_password
 
@@ -16,5 +16,4 @@ class Users(AbstractUser):
     
 class Summaries(models.Model):
     id = models.BigAutoField(primary_key=True)
-    subteam = models.CharField(max_length=2)
     
