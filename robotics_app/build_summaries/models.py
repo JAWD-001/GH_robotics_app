@@ -1,6 +1,7 @@
 from django.db import models
+from datetime import date
 
-class Teams(models.Model):
+class BuildSummary(models.Model):
         class SubTeamNames(models.TextChoices):
                 CODING = 'CD'
                 ENGINEERING = 'EG'
@@ -9,6 +10,7 @@ class Teams(models.Model):
 
         id = models.BigAutoField(primary_key=True)
         subteam = models.CharField(max_length=2, choices=SubTeamNames.choices, default=SubTeamNames.ENGINEERING)
+        summary_date = models.DateField(default=date.today)
         daily_goal = models.TextField(blank=True, Null=True)
         work_accomplished = models.TextField(blank=True, Null=True)
         challenges_faced = models.TextField(blank=True, Null=True)
