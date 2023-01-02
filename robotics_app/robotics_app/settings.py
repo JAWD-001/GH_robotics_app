@@ -40,6 +40,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'login_app.apps.LoginAppConfig',
     'build_summaries.apps.BuildSummariesConfig',
+    'scouting_reports.apps.ScoutingReportsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
