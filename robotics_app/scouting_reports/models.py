@@ -11,3 +11,4 @@ class OpposingTeam(models.Model):
 
 class ScoutingReport(models.Model):
     id = models.BigAutoField(primary_key=True)
+    team = models.CharField()
