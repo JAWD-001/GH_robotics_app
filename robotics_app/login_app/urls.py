@@ -30,5 +30,5 @@ urlpatterns = [
 
 #URL ROUTING FOR SCOUTING AND BUILDING LIST VIEWS
     path('scouting_reports/', ScoutingReportsView.as_view(), name='scouting_reports'),
-    path('build_summaries/', BuildSummariesView.as_view(), name='build_summaries')
+    path('build_summaries/', BuildSummariesView.as_view(), name='build_summaries'),
 ]

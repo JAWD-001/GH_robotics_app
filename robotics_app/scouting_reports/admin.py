@@ -1,9 +1,8 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
 from .models import ScoutingReport, OpposingTeam
 
 # Register your models here.
-admin.site.register(ScoutingReport, UserAdmin)
-admin.site.register(OpposingTeam, UserAdmin)
+admin.site.register(ScoutingReport)
+admin.site.register(OpposingTeam)
 
 # Register your models here.

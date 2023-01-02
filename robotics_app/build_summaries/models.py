@@ -20,3 +20,5 @@ class BuildSummary(models.Model):
 
 
 # Create your models here.
+
+

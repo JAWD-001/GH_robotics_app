@@ -1,4 +1,4 @@
-{% extends 'login_app/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block content %}
@@ -14,7 +14,7 @@
         </div>
         <h4 class="card-description">Make a new Scouting Report or view older Scouting Reports to get an upper hand in the competition!</h4>
         <div class="card-button">
-            <a class="card-button" href="{% url 'login:scouting_options' %}">Go to Scouting Reports
+            <a class="card-button" href="{% url 'scouting:scouting_options' %}">Go to Scouting Reports
             </a>
         </div>
     </div>
@@ -24,7 +24,7 @@
         </div>
         <h4 class="card-description">Make a new Build Summary or view old Build Summaries to prepare the Engineering workbook for review! </h4>
         <div class="card-button">
-            <a class="card-button" href="{% url 'login:build_options' %}">Go to Build Summaries
+            <a class="card-button" href="{% url 'builds:build_options' %}">Go to Build Summaries
             </a>
         </div>
     </div>

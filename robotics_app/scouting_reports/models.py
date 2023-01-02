@@ -30,11 +30,12 @@ class ScoutingReport(models.Model):
 
     id = models.BigAutoField(primary_key=True)
     date = models.DateField(default=date.today)
-    team = models.ForeignKey(OpposingTeam.team_name, on_delete=models.CASCADE)
-    autonomous_scoring = models.Charfield(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
-    autonomous_cone_placement = models.Charfield(blank=True, max_length=12, choices=ConePlacementLocations.choices)
+    team = models.ForeignKey(OpposingTeam, to_field='team_name', on_delete=models.CASCADE)
+    autonomous_scoring = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
+    autonomous_cone_placement = models.CharField(blank=True, max_length=12, choices=ConePlacementLocations.choices)
     parked_autonomously = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
     clear_out_wait_time = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
     side_cone_stacks = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
-    cone_stacks_level = models.CharField(blank=True, max_length=2, choices=StackLevels.choices)
+    cone_stacks_level = models.CharField(blank=True, max_length=10, choices=StackLevels.choices)
     circuit_completed = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
+    

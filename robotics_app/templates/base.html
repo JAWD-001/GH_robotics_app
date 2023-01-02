@@ -14,9 +14,9 @@
             <a href="{% url 'login:user_home' %}" >
                 <img src="{% static 'login_app/panther_head.png' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             </a>
-            <a class="nav-link" href="{% url 'login:build_options' %}">Build Summaries
+            <a class="nav-link" href="{% url 'builds:build_options' %}">Build Summaries
             </a>
-            <a class="nav-link" href="{% url 'login:scouting_options' %}">Scouting Reports
+            <a class="nav-link" href="{% url 'scouting:scouting_options' %}">Scouting Reports
             </a>
         </div>
         <div class="nav-right">
@@ -34,4 +34,3 @@
     </div>
 </body>
 </html>
-
