@@ -1,7 +1,6 @@
 from django.urls import path
 from .views import LoginFormView, CreateUserView, CustomPasswordResetView, CustomPasswordResetDoneView, CustomPasswordResetConfirmView, \
-    CustomPasswordResetCompleteView, ForgotUsernameView, ForgotUsernameDoneView, UserHomeView, ScoutingOptionsView, BuildOptionsView, \
-    ScoutingReportsView, BuildSummariesView
+    CustomPasswordResetCompleteView, ForgotUsernameView, ForgotUsernameDoneView, UserHomeView
 from django.contrib.auth import views as auth_views
 from .forms import LoginForm
 
@@ -23,12 +22,6 @@ urlpatterns = [
     path('forgot_username/', ForgotUsernameView.as_view(), name='forgot_username'),
     path('forgot_username_done/', ForgotUsernameDoneView.as_view(template_name='login_app/forgot_username_done.html'), name='forgot_username_done'),
 
-#URL ROUTING FOR SCOUTING AND BUILD REPORTS
+#URL ROUTING TO HOME FOR SCOUTING AND BUILD REPORTS SELECTION
     path('home/', UserHomeView.as_view(), name='user_home'),
-    path('scouting_options/', ScoutingOptionsView.as_view(), name='scouting_options'),
-    path('build_options/', BuildOptionsView.as_view(), name='build_options'),
-
-#URL ROUTING FOR SCOUTING AND BUILDING LIST VIEWS
-    path('scouting_reports/', ScoutingReportsView.as_view(), name='scouting_reports'),
-    path('build_summaries/', BuildSummariesView.as_view(), name='build_summaries'),
 ]

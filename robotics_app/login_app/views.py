@@ -57,18 +57,4 @@ class UserHomeView(LoginRequiredMixin, TemplateView):
     login_url = '/login/'
     redirect_field_name = 'login'
 
-#OPTIONS MENUS FOR SCOUTING REPORTS AND BUILD SUMMARIES
-class ScoutingOptionsView(LoginRequiredMixin, TemplateView):
-    template_name = 'login_app/scouting.html'
 
-class BuildOptionsView(LoginRequiredMixin, TemplateView):
-    template_name = 'login_app/build_options.html'
-
-#LIST VIEWS FOR SCOUTING REPORT AND BUILD SUMMARIES
-class ScoutingReportsView(LoginRequiredMixin, ListView):
-    model = Users
-    template_name = 'login_app/scouting_reports_list.html'
-
-class BuildSummariesView(LoginRequiredMixin, ListView):
-    model = Users
-    template_name = 'login_app/build_summary_list.html'
