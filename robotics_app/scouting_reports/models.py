@@ -1,6 +1,8 @@
 from django.db import models
 from datetime import date
 # Create your models here.
+
+
 class OpposingTeam(models.Model):
     id = models.BigAutoField(primary_key=True)
     team_number = models.IntegerField(blank=True, unique=True)
