@@ -15,3 +15,9 @@ class BuildOptionsView(LoginRequiredMixin, TemplateView):
 class BuildSummariesView(LoginRequiredMixin, ListView):
     model = BuildSummary
     template_name = 'build_summaries/build_summary_list.html'
+
+class BuildSummariesCreateView(LoginRequiredMixin, CreateView):
+    model = BuildSummary
+    fields = "__all__"
+    success_url = reverse_lazy('builds:build_summaries_list')
+    template_name = 'build_summaries/build_summaries_form.html'
