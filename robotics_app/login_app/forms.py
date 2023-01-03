@@ -1,7 +1,7 @@
 from django.forms import ModelForm, TextInput, PasswordInput, EmailField
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordResetForm, AuthenticationForm
 from django import forms
-from .models import Users, Summaries
+from .models import Users
 from django.contrib.auth.password_validation import validate_password
 from django.core.validators import MinLengthValidator
 from django.contrib.auth import get_user_model
@@ -72,9 +72,3 @@ class ForgotUsernameForm(PasswordResetForm):
             'email': TextInput(attrs={'placeholder': 'Email'}),
         }
 
-
-class SummaryNotesForm(ModelForm):
-    class Meta:
-        model=Summaries
-        fields = '__all__'
-        widgets ={}

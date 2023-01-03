@@ -14,7 +14,7 @@ class BuildSummary(models.Model):
         daily_goal = models.TextField(blank=True)
         work_accomplished = models.TextField(blank=True)
         challenges_faced = models.TextField(blank=True)
-        tomorrow_goal = models.CharField(max_length=500, blank=True)
+        tomorrow_goal = models.CharField(max_length=100, blank=True)
         build_summary_image = models.ImageField(blank=True, upload_to="build_images")
 
 

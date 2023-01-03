@@ -13,7 +13,5 @@ class Users(AbstractUser):
     email = models.EmailField(unique=True, blank=False, validators=[EmailValidator()])
     grad_year = models.CharField(blank=False, max_length=4)
     
-    
-class Summaries(models.Model):
-    id = models.BigAutoField(primary_key=True)
+
     
