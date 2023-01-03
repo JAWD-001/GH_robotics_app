@@ -38,4 +38,6 @@ class ScoutingReport(models.Model):
     side_cone_stacks = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
     cone_stacks_level = models.CharField(blank=True, max_length=10, choices=StackLevels.choices)
     circuit_completed = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
+    scoring_cap_placed = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
+    scoring_cap_placement = models.CharField(blank=True, max_length=10, choices=StackLevels.choices)
     

@@ -41,6 +41,7 @@ class CustomPasswordResetConfirmView(PasswordResetConfirmView):
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
     template_name = "login_app/password_reset_complete.html"
 
+
 #USERNAME RECOVERY WORKFLOW VIEWS
 class ForgotUsernameView(PasswordResetView, SuccessMessageMixin):
     form_class = ForgotUsernameForm

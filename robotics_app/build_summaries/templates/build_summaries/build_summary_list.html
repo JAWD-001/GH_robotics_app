@@ -8,8 +8,15 @@
         <h3 class="title-home-subtitle">Please select one of the summaries below to review!</h3>
 
 <div>
+    {% if build_summaries %}
     <ul>
+        {% for summary in build_summaries %}
+        <li><a href="{% url 'builds:summary_detail' summary.id %}">{{summary.subteam}}{{summary.summary_date}}></a></li>
+        {% endfor %}
     </ul>
+    {% else %}
+    <h1>There are no build summaries to be viewed</h1>
+    {% endif %}
 </div>
 
 {% endblock %}
