@@ -108,7 +108,6 @@ body {
 }
 
 input {
-  height: 100%;
   width: 100%;
   text-indent: 10px;
 }
@@ -265,4 +264,36 @@ a:visited {
   justify-content: center;
   align-items: flex-end;
   flex-grow: 1;
+}
+.build-form-container {
+  display: flex;
+}
+
+.build-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.build-form-field {
+  width: 50%;
+  display: flex;
+}
+
+.build-form-label {
+  min-width: 160px;
+  text-align: left;
+}
+
+.build-form-field > input {
+
+}
+
+.build-form-field > textarea {
+  max-width: 100%;
+}
+
+.build-form-field > select {
+
 }

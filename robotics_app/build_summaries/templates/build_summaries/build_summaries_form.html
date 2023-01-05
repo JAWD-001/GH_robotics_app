@@ -3,9 +3,43 @@
 
 {% block content %}
 <h1>Build Summaries</h1>
-<form method="POST">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Submit">
-</form>
+<div class="build-form-container"></div>
+  <form method="POST" class="build-form">
+    {% csrf_token %}
+    <div class="build-form-field">
+      <p class="build-form-label">{{ form.subteam.label }}</p>
+      <p class="build-form-input">{{ form.subteam }}</p>
+    </div>
+    <div class="build-form-field">
+      <p class="build-form-label">{{ form.summary_date.label }}</p>
+      <p class="build-form-input">{{ form.summary_date }}</p>
+    </div>
+    <div class="build-form-field">
+      <p class="build-form-label">{{ form.daily_goal.label }}<p/>
+    <p class="build-form-input">{{ form.daily_goal }}</p>
+    </div>
+
+    <div class="build-form-field">
+      <p class="build-form-label">{{ form.work_accomplished.label }}</p>
+      <p class="build-form-input">{{ form.work_accomplished }}</p>
+    </div>
+
+    <div class="build-form-field">
+      <p class="build-form-label">{{ form.challenges_faced.label }}</p>
+      <p class="build-form-input">{{ form.challenges_faced }}</p>
+    </div>
+
+    <div class="build-form-field">
+      <p class="build-form-label">{{ form.tomorrow_goal.label }}</p>
+      <p class="build-form-input">{{ form.tomorrow_goal }}</p>
+    </div>
+
+    <div class="build-form-field">
+      <p class="build-form-label">{{ form.build_summary_image.label }}</p>
+      <p class="build-form-input">{{ form.build_summary_image }}</p>
+    </div>
+    <input class="btn" type="submit" value="Submit">
+
+  </form>
+</div>
 {% endblock %}
