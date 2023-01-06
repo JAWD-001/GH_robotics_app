@@ -10,6 +10,8 @@ class OpposingTeam(models.Model):
     team_school = models.CharField(blank=True, max_length=200)
     team_contact = models.CharField(blank=True, max_length=200)
 
+    def __str__(self):
+        return self.team_name
 
 class ScoutingReport(models.Model):
     class Option(models.TextChoices):

@@ -7,16 +7,37 @@
     <h1 class="title-home">Welcome, to the team Scouting Reports list {{ user.username|title }}!</h1>
         <h3 class="title-home-subtitle">Please select one of the reports below to review!</h3>
 
-<div>
-    {% if scouting_report %}
-    <ul>
-        {% for report in scouting_reports %}
-        <li><a href="{% url 'builds:report_detail' report.id">{{scouting_report.team_name}} {{scouting_report.date}}</a></li>
-        {% endfor %}
-    </ul>
+<div class="small-card-container">
+    {% if scouting_reports %}
+    {% for report in scouting_reports %}
+    <div class="card">
+        <h1 class="card-title">{{report.team}} - {{report.date}}</h1>
+        <div class="card-button">
+            <a class="card-button" href="{% url 'builds:summary_detail' report.id %}">Review Build Summary
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+
     {% else %}}
     <h1>There are no scouting reports to be viewed!</h1>
     {% endif %}
-</div>
+    <div class="pagination-container">
+    <div class="step-links">
+        <div class="page-number">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </div>
+        {% if page_obj.has_previous %}
+        <a class="pagination-link" href="?page=1">&laquo; first</a>
+        <a class="pagination-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+        <a class="pagination-link" href="?page={{ page_obj.next_page_number }}">next</a>
+        <a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+
+    </div>
+    </div>
 
 {% endblock %}
