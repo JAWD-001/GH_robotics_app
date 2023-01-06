@@ -24,4 +24,4 @@ class ScoutingReportDetailView(LoginRequiredMixin,DetailView):
     model = ScoutingReport
     context_object_name = 'scouting_reports'
     fields = '__all__'
-    template_name = ''
+    template_name = 'scouting_reports/scouting_reports_detail.html'
