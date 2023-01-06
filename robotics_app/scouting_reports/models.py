@@ -4,6 +4,9 @@ from datetime import date
 
 
 class OpposingTeam(models.Model):
+    class Meta:
+        ordering = ['team_number']
+
     id = models.BigAutoField(primary_key=True)
     team_number = models.IntegerField(blank=True, unique=True)
     team_name = models.CharField(blank=True, max_length=200, unique=True)

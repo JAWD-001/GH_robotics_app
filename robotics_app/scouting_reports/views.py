@@ -12,6 +12,7 @@ class ScoutingReportsView(LoginRequiredMixin, ListView):
     model = ScoutingReport
     template_name = 'scouting_reports/scouting_reports_list.html'
     context_object_name = 'scouting_reports'
+    paginate_by = 8
 
 class ScoutingReportCreateView(LoginRequiredMixin,CreateView):
     model = ScoutingReport
