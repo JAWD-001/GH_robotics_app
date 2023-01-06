@@ -7,16 +7,39 @@
     <h1 class="title-home">Welcome, to the team Build Summaries list {{ user.username|title }}!</h1>
         <h3 class="title-home-subtitle">Please select one of the summaries below to review!</h3>
 
-<div>
+<div class="small-card-container">
     {% if build_summaries %}
-    <ul>
-        {% for summary in build_summaries %}
-        <li><a href="{% url 'builds:summary_detail' summary.id %}">{{summary.subteam}}{{summary.summary_date}}></a></li>
-        {% endfor %}
-    </ul>
+    {% for summary in build_summaries %}
+    <div class="card">
+        <h1 class="card-title">{{summary.subteam}} - {{summary.summary_date}}</h1>
+        <h4 class="card-description">{{summary.daily_goal}}</h4>
+        <div class="card-button">
+            <a class="card-button" href="{% url 'builds:summary_detail' summary.id %}">Review Build Summary
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+
     {% else %}
     <h1>There are no build summaries to be viewed</h1>
     {% endif %}
-</div>
+    <div class="pagination-container">
+    <div class="step-links">
+        <div class="page-number">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </div>
+        {% if page_obj.has_previous %}
+        <a class="pagination-link" href="?page=1">&laquo; first</a>
+        <a class="pagination-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
 
+
+        {% if page_obj.has_next %}
+        <a class="pagination-link" href="?page={{ page_obj.next_page_number }}">next</a>
+        <a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+
+    </div>
+    </div>
+</div>
 {% endblock %}

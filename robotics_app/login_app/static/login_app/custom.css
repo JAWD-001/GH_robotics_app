@@ -149,6 +149,15 @@ a:visited {
   color: red;
   margin-top: 2vh;
 }
+
+.small-card-container{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 5vh;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
 .card-container{
   display: flex;
   justify-content: space-evenly;
@@ -297,3 +306,16 @@ a:visited {
 .build-form-field > select {
 
 }
+
+
+.pagination-container{
+  display: flex;
+  margin-top: 3vh;
+}
+
+.step-links {
+  text-align: center;
+}
+
+
+
