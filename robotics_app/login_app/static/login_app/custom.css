@@ -115,7 +115,7 @@ input {
 a {
   text-decoration: none;
   font-size: 12px;
-  color: blue;
+  color: #004712;
 }
 
 .forgot {
@@ -138,7 +138,7 @@ p {
 
 a:visited {
   text-decoration: none;
-  color: inherit;
+  color: #006b1b;
 }
 
 .errorlist {
@@ -310,10 +310,15 @@ a:visited {
 .pagination-container{
   display: flex;
   margin-top: 3vh;
+  justify-content: center;
 }
 
 .step-links {
   text-align: center;
+}
+
+.pagination-link {
+  color: #004712;
 }
 
 .label {

@@ -32,13 +32,14 @@
         </div>
         <div>
             {% if page_obj.has_previous %}
-            <a class="pagination-link" href="?page=1">&laquo; first</a></li>
-            <a class="pagination-link" href="?page={{ page_obj.previous_page_number }}">previous</a></li>
+            <a href="?page=1" class="pagination-link">&laquo; first</a></li>
+            <a href="?page={{ page_obj.previous_page_number }}" class="pagination-link">previous</a></li>
             {% endif %}
+
             {% if page_obj.has_next %}
-        <a class="pagination-link" href="?page={{ page_obj.next_page_number }}">next</a>
-        <a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-        {% endif %}
+            <a href="?page={{ page_obj.next_page_number }}" class="pagination-link" >next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}" class="pagination-link">last &raquo;</a>
+            {% endif %}
 
     </div>
     </div>
