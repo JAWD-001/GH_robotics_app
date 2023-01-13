@@ -316,5 +316,6 @@ a:visited {
   text-align: center;
 }
 
-
-
+.label {
+  background-color: deeppink;
+}
