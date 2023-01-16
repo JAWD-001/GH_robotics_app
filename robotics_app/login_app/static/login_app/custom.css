@@ -116,9 +116,36 @@ a {
   text-decoration: none;
   font-size: 12px;
 }
+.create-user-template input {
+  height: 100%
+}
+
+.create-user-template a {
+  color: #00bc2f;
+}
+
+.login-template input {
+  height: 100%
+}
+
+.login-template a {
+  color: #00bc2f;
+}
 
 .forgot {
   margin-bottom: 12px;
+}
+
+.recovery-template {
+
+}
+
+.recovery-template input {
+  height: 100%;
+}
+
+.recovery-template a {
+  color: #00bc2f;
 }
 
 .login_link {

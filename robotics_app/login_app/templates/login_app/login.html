@@ -1,5 +1,5 @@
 {% load static %}
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
   </head>
   {% block content %}
-  <body class="outside">
+  <body class="login-template outside">
     <div class="header">
       <img
         src="{% static 'login_app/pine_crest_school.jpg' %}"
@@ -19,7 +19,7 @@
     <h1 class="title">ROBOTICS</h1>
     <div class="form">
       <form method="POST">
-        <div class="form_field">{% csrf_token %} {{form.username}}</div>
+        <div class="form_field">{% csrf_token %} {{ form.username }}</div>
         <div class="forgot">
           <a href="{% url 'login:forgot_username' %}">Forgot Username?</a>
         </div>
