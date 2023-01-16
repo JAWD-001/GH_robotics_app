@@ -3,44 +3,45 @@
 
 {% block content %}
 
-<body class="outside">
+<div class="outside">
     <h1 class="title-home">Welcome, to the team Scouting Reports list {{ user.username|title }}!</h1>
-        <h3 class="title-home-subtitle">Please select one of the reports below to review!</h3>
+    <h3 class="title-home-subtitle">Please select one of the reports below to review!</h3>
 
-<div class="small-card-container">
     {% if scouting_reports %}
-    {% for report in scouting_reports %}
-    <div class="card">
-        <h1 class="card-title">{{report.team}} - {{report.date}}</h1>
-        <div class="card-button">
-            <a class="card-button" href="{% url 'builds:summary_detail' report.id %}">Review Build Summary
-            </a>
+    <div class="small-card-container">
+        {% for report in scouting_reports %}
+        <div class="card">
+            <h1 class="card-title">{{report.team}} - {{report.date}}</h1>
+            <div class="card-button">
+                <a class="card-button" href="{% url 'builds:summary_detail' report.id %}">Review Scouting Report
+                </a>
+            </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 
     {% else %}}
     <h1>There are no scouting reports to be viewed!</h1>
     {% endif %}
 
     <div class="pagination-container">
-    <div class="step-links">
-        <div class="page-number">
-            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        <div class="step-links">
+            <div class="page-number">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </div>
+            <div>
+                {% if page_obj.has_previous %}
+                <a class="pagination-link" href="?page=1">&laquo; First</a>
+                <a class="pagination-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                {% if page_obj.has_next %}
+                <a class="pagination-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </div>
         </div>
-        <div>
-            {% if page_obj.has_previous %}
-            <a class="pagination-link" href="?page=1">&laquo; first</a>
-            <a class="pagination-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
-
-            {% if page_obj.has_next %}
-            <a class="pagination-link" href="?page={{ page_obj.next_page_number }}">next</a>
-            <a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
-
     </div>
-    </div>
-    </div>
+</div>
 
 {% endblock %}

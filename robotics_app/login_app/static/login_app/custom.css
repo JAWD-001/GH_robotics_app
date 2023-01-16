@@ -336,14 +336,23 @@ a:visited {
   display: flex;
   margin-top: 3vh;
   justify-content: center;
+  font-size: 18px;
+  color: #004712;
 }
 
 .step-links {
   text-align: center;
 }
 
+.page-number{
+  margin-bottom: 8px;
+}
+
 .pagination-link {
   color: #004712;
+  margin: 4px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .label {
