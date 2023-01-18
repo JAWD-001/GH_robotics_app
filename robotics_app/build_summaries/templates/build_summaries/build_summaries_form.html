@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
 <h1>Build Summaries</h1>
@@ -36,8 +37,8 @@
 
     <div class="build-form-field">
       <p class="build-form-label">{{ form.build_summary_image.label }}</p>
-      <p hidden class="build-form-input">{{ form.build_summary_image }}</p>
-      <label class="label" for="id_build_summary_image">Upload button</label>
+      <p hidden class="build-form-input">{{ form.build_summary_image|add_class:"upload_button" }}</p>
+      <label class="build_summary_image_button" for="id_build_summary_image">Upload Build Image</label>
     </div>
     <input class="btn" type="submit" value="Submit">
 

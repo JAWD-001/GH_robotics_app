@@ -328,9 +328,16 @@ a:visited {
 }
 
 .build-form-field > select {
-
 }
 
+.build_summary_image_button {
+  color: white;
+  background-color: #004712;
+  margin: 2px;
+  padding: 7px;
+  margin-bottom: 16px;
+  border-radius: 3px;
+}
 
 .pagination-container{
   display: flex;
@@ -353,8 +360,4 @@ a:visited {
   margin: 4px;
   font-size: 18px;
   font-weight: bold;
-}
-
-.label {
-  background-color: deeppink;
 }
