@@ -307,6 +307,7 @@ a:visited {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  font-weight: bold;
 }
 
 .build-form-field {
@@ -317,6 +318,7 @@ a:visited {
 .build-form-label {
   min-width: 160px;
   text-align: left;
+  font-size: 13px;
 }
 
 .build-form-field > input {
@@ -334,9 +336,14 @@ a:visited {
   color: white;
   background-color: #004712;
   margin: 2px;
-  padding: 7px;
+  padding: 8px;
   margin-bottom: 16px;
   border-radius: 3px;
+}
+
+.build_summary_image_button:hover {
+  background-color: white;
+  color: #004712;
 }
 
 .pagination-container{

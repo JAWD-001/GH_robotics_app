@@ -3,7 +3,10 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<h1>Build Summaries</h1>
+<div class="title">
+  <h1>Create New Build Summary</h1>
+</div>
+
 <div class="build-form-container"></div>
   <form method="POST" class="build-form">
     {% csrf_token %}
