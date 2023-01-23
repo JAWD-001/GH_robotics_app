@@ -16,7 +16,7 @@ class BuildSummariesView(LoginRequiredMixin, ListView):
     model = BuildSummary
     template_name = 'build_summaries/build_summary_list.html'
     context_object_name = 'build_summaries'
-    paginate_by = 2
+    paginate_by = 4
 
 class BuildSummariesCreateView(LoginRequiredMixin, CreateView):
     model = BuildSummary

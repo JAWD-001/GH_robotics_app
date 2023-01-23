@@ -298,6 +298,7 @@ a:visited {
   align-items: flex-end;
   flex-grow: 1;
 }
+
 .build-form-container {
   display: flex;
 }
@@ -321,15 +322,8 @@ a:visited {
   font-size: 13px;
 }
 
-.build-form-field > input {
-
-}
-
 .build-form-field > textarea {
   max-width: 100%;
-}
-
-.build-form-field > select {
 }
 
 .build_summary_image_button {
@@ -344,6 +338,34 @@ a:visited {
 .build_summary_image_button:hover {
   background-color: white;
   color: #004712;
+  border: 2px #004712;
+}
+
+.scouting-report-container {
+  display: flex;
+}
+
+.scouting-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.scouting-form-field {
+  width: 50%;
+  display: flex;
+}
+
+.scouting-form-label {
+  min-width: 160px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.scouting-form-input {
+
 }
 
 .pagination-container{
