@@ -17,9 +17,9 @@ class BuildSummary(models.Model):
         tomorrow_goal = models.TextField(max_length=100, blank=True)
         build_summary_image = models.ImageField(blank=True, upload_to="build_images")
 
+
         def __str__(self):
-                return self.subteam, self.summary_date, self.daily_goal, self.work_accomplished, self.challenges_faced,
-                self.tommorw_goal, self.build_summary_image
+                return self.subteam, self.summary_date, self.daily_goal, self.work_accomplished, self.challenges_faced, self.tommorw_goal, self.build_summary_image
 
 
 # Create your models here.

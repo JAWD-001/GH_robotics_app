@@ -45,4 +45,5 @@ class ScoutingReport(models.Model):
     circuit_completed = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
     scoring_cap_placed = models.CharField(blank=True, max_length=2, choices=Option.choices, default=Option.NO)
     scoring_cap_placement = models.CharField(blank=True, max_length=10, choices=StackLevels.choices)
+    performance_description = models.TextField(blank=True)
     
