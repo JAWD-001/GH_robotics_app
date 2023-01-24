@@ -19,7 +19,7 @@ class BuildSummary(models.Model):
 
 
         def __str__(self):
-                return self.subteam, self.summary_date, self.daily_goal, self.work_accomplished, self.challenges_faced, self.tommorw_goal, self.build_summary_image
+                return self.subteam, self.summary_date, self.daily_goal, self.work_accomplished, self.challenges_faced, self.tomorrow_goal, self.build_summary_image
 
 
 # Create your models here.
