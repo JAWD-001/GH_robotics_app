@@ -353,12 +353,12 @@ a:visited {
   font-weight: bold;
 }
 
-.scouting-form-field {
+.scouting-report-field {
   width: 50%;
   display: flex;
 }
 
-.scouting-form-label {
+.scouting-report-label {
   min-width: 160px;
   text-align: left;
   font-size: 13px;
