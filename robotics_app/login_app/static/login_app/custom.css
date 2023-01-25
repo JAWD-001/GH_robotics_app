@@ -354,18 +354,18 @@ a:visited {
 }
 
 .scouting-report-field {
-  width: 50%;
+  width: 60%;
   display: flex;
+  justify-content: start;
+  gap: 10px;
 }
 
 .scouting-report-label {
   min-width: 160px;
   text-align: left;
   font-size: 13px;
-}
-
-.scouting-form-input {
-
+  margin-right: 120px;
+  flex-wrap: wrap;
 }
 
 .pagination-container{
