@@ -1,0 +1,44 @@
+.scouting-reports-create {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+.scouting-report-container {
+    display: flex;
+    flex-grow: 1;
+    overflow: auto;
+    width: 80%;
+}
+
+.scouting-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    height: calc(100% + 24px);
+    padding-bottom: 24px;
+}
+
+.scouting-report-field {
+    width: 60%;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+.scouting-report-label {
+    min-width: 160px;
+    text-align: left;
+    font-size: 13px;
+    margin-right: 120px;
+    flex-wrap: wrap;
+}
+
+.scouting-form-submit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -1,0 +1,55 @@
+.build-summary-create {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+.build-form-container {
+    display: flex;
+    flex-grow: 1;
+    overflow: auto;
+    width: 70%;
+}
+
+.build-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    height: calc(100% + 242px);
+}
+
+.build-form-field {
+    width: 50%;
+    display: flex;
+}
+
+.build-form-label {
+    min-width: 160px;
+    text-align: left;
+    font-size: 13px;
+}
+
+.build-form-field > textarea {
+    max-width: 100%;
+}
+
+.build_summary_image_button {
+    color: white;
+    background-color: #004712;
+    padding: 8px;
+    margin-bottom: 16px;
+    border-radius: 3px;
+}
+
+.build_summary_image_button:hover {
+    background-color: white;
+    color: #004712;
+    border: 2px #004712;
+}
+
+.build-submit {
+    margin-left: 470px;
+}

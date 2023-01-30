@@ -2,49 +2,58 @@
 {% load static %}
 {% load widget_tweaks %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'login_app/global.css' %}" />
+<link rel="stylesheet" href="{% static 'css/build-summary-create.css' %}">
+{% endblock %}
+
 {% block content %}
-<div class="title">
-  <h1>Create New Build Summary</h1>
-</div>
+<div class="build-summary-create">
+  <div class="title">
+    <h1>Create New Build Summary</h1>
+  </div>
 
-<div class="build-form-container">
-  <form method="POST" class="build-form">
-    {% csrf_token %}
-    <div class="build-form-field">
-      <p class="build-form-label">{{ form.subteam.label }}</p>
-      <p class="build-form-input">{{ form.subteam }}</p>
-    </div>
-    <div class="build-form-field">
-      <p class="build-form-label">{{ form.summary_date.label }}</p>
-      <p class="build-form-input">{{ form.summary_date }}</p>
-    </div>
-    <div class="build-form-field">
-      <p class="build-form-label">{{ form.daily_goal.label }}<p/>
-    <p class="build-form-input">{{ form.daily_goal }}</p>
-    </div>
+  <div class="build-form-container">
+    <form method="POST" class="build-form">
+      {% csrf_token %}
+      <div class="build-form-field">
+        <p class="build-form-label">{{ form.subteam.label }}</p>
+        <p>{{ form.subteam }}</p>
+      </div>
 
-    <div class="build-form-field">
-      <p class="build-form-label">{{ form.work_accomplished.label }}</p>
-      <p class="build-form-input">{{ form.work_accomplished }}</p>
-    </div>
+      <div class="build-form-field">
+        <p class="build-form-label">{{ form.summary_date.label }}</p>
+        <p>{{ form.summary_date }}</p>
+      </div>
 
-    <div class="build-form-field">
-      <p class="build-form-label">{{ form.challenges_faced.label }}</p>
-      <p class="build-form-input">{{ form.challenges_faced }}</p>
-    </div>
+      <div class="build-form-field">
+        <p class="build-form-label">{{ form.build_summary_image.label }}</p>
+        <p hidden>{{ form.build_summary_image|add_class:"upload_button" }}</p>
+        <label class="build_summary_image_button" for="id_build_summary_image">Upload Build Image</label>
+      </div>
 
-    <div class="build-form-field">
-      <p class="build-form-label">{{ form.tomorrow_goal.label }}</p>
-      <p class="build-form-input">{{ form.tomorrow_goal }}</p>
-    </div>
+      <div class="build-form-field">
+        <p class="build-form-label">{{ form.daily_goal.label }}<p/>
+        <p>{{ form.daily_goal }}</p>
+      </div>
 
-    <div class="build-form-field">
-      <p class="build-form-label">{{ form.build_summary_image.label }}</p>
-      <p hidden class="build-form-input">{{ form.build_summary_image|add_class:"upload_button" }}</p>
-      <label class="build_summary_image_button" for="id_build_summary_image">Upload Build Image</label>
-    </div>
-    <input class="btn" type="submit" value="Submit">
+      <div class="build-form-field">
+        <p class="build-form-label">{{ form.work_accomplished.label }}</p>
+        <p>{{ form.work_accomplished }}</p>
+      </div>
 
-  </form>
+      <div class="build-form-field">
+        <p class="build-form-label">{{ form.challenges_faced.label }}</p>
+        <p>{{ form.challenges_faced }}</p>
+      </div>
+
+      <div class="build-form-field">
+        <p class="build-form-label">{{ form.tomorrow_goal.label }}</p>
+        <p>{{ form.tomorrow_goal }}</p>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
 </div>
 {% endblock %}

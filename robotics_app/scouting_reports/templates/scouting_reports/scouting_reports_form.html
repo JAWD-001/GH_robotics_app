@@ -1,67 +1,72 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block content %}
-<div class="title">
-  <h1>Scouting Report Form</h1>
-</div>
+{% block styles %}
+<link rel="stylesheet" href="{% static 'login_app/global.css' %}" />
+<link rel="stylesheet" href="{% static 'scouting-report-create.css' %}">
+{% endblock %}
 
-<div class="scouting-report-container">
-  <form method="POST" class="scouting-form">
-    {% csrf_token %}
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.date.label }}</p>
-      <p class="scouting-report-input">{{ form.date }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.team.label }}</p>
-      <p class="scouting-report-input">{{ form.team }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.autonomous_scoring.label }}</p>
-      <p class="scouting-report-input">{{ form.autonomous_scoring }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.autonomous_cone_placement.label }}</p>
-      <div>
-        <p class="scouting-report-input">{{ form.autonomous_cone_placement }}</p>
+{% block content %}
+<div class="scouting-reports-create">
+  <div class="title">
+    <h1>Scouting Report Form</h1>
+  </div>
+
+  <div class="scouting-report-container">
+    <form method="POST" class="scouting-form">
+      {% csrf_token %}
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.date.label }}</p>
+        <p>{{ form.date }}</p>
       </div>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.parked_autonomously.label }}</p>
-      <p class="scouting-report-input">{{ form.parked_autonomously }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.clear_out_wait_time.label }}</p>
-      <p class="scouting-report-input">{{ form.clear_out_wait_time }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.side_cone_stacks.label }}</p>
-      <p class="scouting-report-input">{{ form.side_cone_stacks }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.cone_stacks_level.label }}</p>
-      <p class="scouting-report-input">{{ form.cone_stacks_level }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.circuit_completed.label }}</p>
-      <p class="scouting-report-input">{{ form.circuit_completed }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.scoring_cap_placed.label }}</p>
-      <p class="scouting-report-input">{{ form.scoring_cap_placed }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.scoring_cap_placement.label }}</p>
-      <p class="scouting-report-input">{{ form.scoring_cap_placement }}</p>
-    </div>
-    <div class="scouting-report-field">
-      <p class="scouting-report-label">{{ form.performance_description.label }}</p>
-      <p class="scouting-report-input">{{ form.performance_description }}</p>
-    </div>
-    <div>
-      <input class="build_summary_image_button" type="submit" value="Submit">
-    </div>
-  </form>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.team.label }}</p>
+        <p>{{ form.team }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.autonomous_scoring.label }}</p>
+        <p>{{ form.autonomous_scoring }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.autonomous_cone_placement.label }}</p>
+        <div>
+          <p>{{ form.autonomous_cone_placement }}</p>
+        </div>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.parked_autonomously.label }}</p>
+        <p>{{ form.parked_autonomously }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.clear_out_wait_time.label }}</p>
+        <p>{{ form.clear_out_wait_time }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.side_cone_stacks.label }}</p>
+        <p>{{ form.side_cone_stacks }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.cone_stacks_level.label }}</p>
+        <p>{{ form.cone_stacks_level }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.circuit_completed.label }}</p>
+        <p>{{ form.circuit_completed }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.scoring_cap_placed.label }}</p>
+        <p>{{ form.scoring_cap_placed }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.scoring_cap_placement.label }}</p>
+        <p>{{ form.scoring_cap_placement }}</p>
+      </div>
+      <div class="scouting-report-field">
+        <p class="scouting-report-label">{{ form.performance_description.label }}</p>
+        <p>{{ form.performance_description }}</p>
+      </div>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
 </div>
 {% endblock %}

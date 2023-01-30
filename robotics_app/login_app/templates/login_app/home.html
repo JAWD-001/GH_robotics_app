@@ -1,34 +1,36 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
+
 {% block content %}
 
-<body class="outside">
+<body>
     <h1 class="title-home">Welcome, {{ user.username|title }}!</h1>
-        <h3 class="title-home-subtitle">Please select one of the options below!</h3>
+    <h3 class="title-home-subtitle">Please select one of the options below!</h3>
 
-<div class="card-container">
-    <div class="card">
-        <h1 class="card-title">Scouting Reports</h1>
-        <div class="card-image"><img src="{% static 'login_app/recruiter.svg' %}">
+    <div class="card-container">
+        <div class="card">
+            <h1 class="card-title">Scouting Reports</h1>
+            <div class="card-image">
+                <img src="{% static 'login_app/recruiter.svg' %}">
+            </div>
+            <h4 class="card-description">Make a new Scouting Report or view older Scouting Reports to get an upper hand in the competition!</h4>
+            <div class="card-button">
+                <a class="card-button" href="{% url 'scouting:scouting_options' %}">Go to Scouting Reports</a>
+            </div>
         </div>
-        <h4 class="card-description">Make a new Scouting Report or view older Scouting Reports to get an upper hand in the competition!</h4>
-        <div class="card-button">
-            <a class="card-button" href="{% url 'scouting:scouting_options' %}">Go to Scouting Reports
-            </a>
+        <div class="card">
+            <h1 class="card-title">Build Summaries</h1>
+            <div class="card-image">
+                <img src="{% static 'login_app/engineering.png' %}" />
+            </div>
+            <h4 class="card-description">Make a new Build Summary or view old Build Summaries to prepare the Engineering workbook for review!</h4>
+            <div class="card-button">
+                <a class="card-button" href="{% url 'builds:build_options' %}">Go to Build Summaries</a>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <h1 class="card-title">Build Summaries</h1>
-        <div class="card-image"><img src="{% static 'login_app/engineering.png' %}">
-        </div>
-        <h4 class="card-description">Make a new Build Summary or view old Build Summaries to prepare the Engineering workbook for review! </h4>
-        <div class="card-button">
-            <a class="card-button" href="{% url 'builds:build_options' %}">Go to Build Summaries
-            </a>
-        </div>
-    </div>
-</div>
 </body>
 
 {% endblock %}

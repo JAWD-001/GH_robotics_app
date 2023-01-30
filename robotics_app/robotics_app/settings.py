@@ -140,11 +140,11 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 #EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
 #Twilio SendGrid
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey'
-EMAIL_HOST_PASSWORD = env('SENDGRID_API_KEY')
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = env('SENDGRID_API_KEY')
 
 # The email you'll be sending emails from
 DEFAULT_FROM_EMAIL = env('FROM_EMAIL', default='noreply@gmail.com')

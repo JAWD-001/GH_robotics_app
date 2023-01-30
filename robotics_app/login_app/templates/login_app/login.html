@@ -1,19 +1,24 @@
 {% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'login_app/global.css' %}" />
+<link rel="stylesheet" href="{% static 'login_app/login.css' %}">
+{% endblock %}
+
 <html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login Page</title>
-    <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
   </head>
   {% block content %}
-  <body class="login-template outside">
+  <body class="login-template">
     <div class="header">
       <img
         src="{% static 'login_app/pine_crest_school.jpg' %}"
         alt="'pine crest school logo"
-        class="img"
+        class="pine-crest-logo"
       />
     </div>
     <h1 class="title">ROBOTICS</h1>
@@ -28,7 +33,7 @@
           <a href="{% url 'login:reset_password' %}">Forgot Password?</a>
         </div>
         <div class="form_field">
-          <input type="submit" class="btn" />
+          <input type="submit" class="login-form-fields" />
         </div>
       </form>
       <div class="errorlist" style="text-align: center; margin-bottom: 20px;">

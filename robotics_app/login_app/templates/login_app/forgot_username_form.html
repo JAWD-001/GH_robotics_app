@@ -1,16 +1,21 @@
 {% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'login_app/global.css' %}" />
+<link rel="stylesheet" href="{% static 'login_app/recovery.css' %}">
+{% endblock %}
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forgot Username</title>
-    <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
   </head>
   {% block content %}
-  <body class="recovery-template outside">
-    <h1 class="title title2">FORGOT USERNAME?</h1>
-    <p class="title2 header">ENTER YOUR EMAIL BELOW AND WE WILL SEND YOU AN EMAIL WITH YOUR USERNAME!</p>
+  <body class="recovery-template">
+    <h1 class="title title-extra-margin">FORGOT USERNAME?</h1>
+    <p class="title-extra-margin header">ENTER YOUR EMAIL BELOW AND WE WILL SEND YOU AN EMAIL WITH YOUR USERNAME!</p>
     <div class="form">
     <form method="POST">
         {% csrf_token %} {% for field in form %}
@@ -22,5 +27,6 @@
             <a href="{% url 'login:home' %}">Back to Login</a>
         </div>
         {% endblock %}
+    </form>
   </body>
 </html>

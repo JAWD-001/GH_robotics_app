@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{% block title %} {% endblock %}</title>
-
-    <link rel="stylesheet" href="{% static 'login_app/custom.css' %}" />
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'login_app/global.css' %}" />
+    {% endblock %}
 </head>
-<body class="outside">
+<body>
     <div class="nav">
         <div class="nav-left">
             <a href="{% url 'login:user_home' %}" >
@@ -24,13 +25,11 @@
             </a>
         </div>
     </div>
-    <div>
+    <div class="content-container">
         {% block content %}{% endblock %}
     </div>
     <div class="footer">
-        <p>
-            Footer Text
-        </p>
+        <p>Developed by James Dycus - 2023</p>
     </div>
 </body>
 </html>

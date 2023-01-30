@@ -2,36 +2,30 @@
 {% load static %}
 
 {% block content %}
-
-<body class="outside">
+<body>
     <h1 class="title-home">Welcome, to the team Build Hub {{ user.username|title }}!</h1>
-        <h3 class="title-home-subtitle">Please select whether you would like to create a build summary or view one!</h3>
+    <h3 class="title-home-subtitle">Please select whether you would like to create a build summary or view one!</h3>
 
-<div class="card-container">
-    <div class="card">
-        <h1 class="card-title">Make a New Build Summary</h1>
-        <div class="card-image"><img src="{% static 'login_app/prototype.svg' %}">
+    <div class="card-container">
+        <div class="card">
+            <h1 class="card-title">Make a New Build Summary</h1>
+            <div class="card-image"><img src="{% static 'login_app/prototype.svg' %}">
+            </div>
+            <h4 class="card-description">Make a new Build Summary for the Engineering Workbook!</h4>
+            <div class="card-button">
+                <a class="card-button" href="{% url 'builds:build_summaries_form' %}">Create a New Entry
+                </a>
+            </div>
         </div>
-        <h4 class="card-description">Make a new Build Summary for the Engineering Workbook!</h4>
-        <div class="card-button">
-            <a class="card-button" href="{% url 'builds:build_summaries_form' %}">Create a New Entry
-            </a>
+        <div class="card">
+            <h1 class="card-title">View a Build Summary</h1>
+            <div class="card-image"><img src="{% static 'login_app/seo.svg' %}">
+            </div>
+            <h4 class="card-description">Review older entries in the Engineering Workbook!</h4>
+            <div class="card-button">
+                <a class="card-button" href="{% url 'builds:build_summaries' %}">Go to Build Summaries</a>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <h1 class="card-title">View a Build Summary</h1>
-        <div class="card-image"><img src="{% static 'login_app/seo.svg' %}">
-        </div>
-        <h4 class="card-description">Review older entries in the Engineering Workbook!</h4>
-        <div class="card-button">
-            <a class="card-button" href="{% url 'builds:build_summaries' %}">Go to Build Summaries
-            </a>
-        </div>
-    </div>
-</div>
-</body>
-
-
-
 </body>
 {% endblock content %}
