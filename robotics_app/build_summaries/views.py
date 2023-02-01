@@ -27,5 +27,4 @@ class BuildSummariesCreateView(LoginRequiredMixin, CreateView):
 class BuildSummaryDetailView(LoginRequiredMixin, DetailView):
     model = BuildSummary
     context_object_name = 'build_summaries'
-    fields = "__all__"
     template_name = 'build_summaries/build_summary_detail.html'

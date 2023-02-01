@@ -18,7 +18,7 @@ class BuildSummary(models.Model):
         build_summary_image = models.ImageField(blank=True, upload_to="build_images")
 
 
-        def __str__(self):
+        def _str_(self):
                 return self.subteam, self.summary_date, self.daily_goal, self.work_accomplished, self.challenges_faced, self.tomorrow_goal, self.build_summary_image
 
 
