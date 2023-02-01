@@ -14,7 +14,7 @@
             <h1 class="card-title">{{report.team}} - {{report.date}}</h1>
             <h4 class="card-description">{{report.performance_description}}</h4>
             <div class="card-button">
-                <a class="card-button" href="{% url 'builds:summary_detail' report.id %}">Review Scouting Report
+                <a class="card-button" href="{% url 'scouting:report_detail' report.id %}">Review Scouting Report
                 </a>
             </div>
         </div>

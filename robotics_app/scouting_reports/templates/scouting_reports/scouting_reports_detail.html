@@ -3,5 +3,6 @@
 
 {% block content %}
 <h1>Detail View for a Scouting Report</h1>
-{{scouting_reports}}
+{{scouting_reports.team}}
+<a href="{% url 'scouting:scouting_reports' %}">Back to List</a>
 {% endblock %}
