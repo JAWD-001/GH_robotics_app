@@ -3,8 +3,41 @@
 
 
 {% block content %}
-<h1>Detail View for a Build Summary</h1>
-<p>{{build_summaries.subteam}}</p>
-<p>{{build_summaries.tomorrow_goal}}</p>
-<a href="{% url 'builds:build_summaries' %}">Back to List</a>
+<div class="title">
+    <h1>Build Summary Table</h1>
+</div>
+
+<table>
+    <tr>
+        <th>Subteam Name:</th>
+        <td>{{build_summaries.subteam}}</td>
+    </tr>
+    <tr>
+        <th>Summary Date:</th>
+        <td>{{build_summaries.summary_date}}</td>
+    </tr>
+    <tr>
+        <th>Daily Goal:</th>
+        <td>{{build_summaries.daily_goal}}</td>
+    </tr>
+    <tr>
+        <th>Work Accomplished:</th>
+        <td>{{build_summaries.work_accomplished}}</td>
+    </tr>
+    <tr>
+        <th>Challenges Faced:</th>
+        <td>{{build_summaries.challenges_faced}}</td>
+    </tr>
+    <tr>
+        <th>Tomorrow's Goal:</th>
+        <td>{{build_summaries.tomorrow_goal}}</td>
+    </tr>
+    <tr>
+        <th>Build Summary Image:</th>
+        <td>{{build_summaries.build_summary_image}}</td>
+    </tr>
+</table>
+<div>
+    <a href="{% url 'builds:build_summaries' %}">Back to List</a>
+</div>
 {% endblock %}
