@@ -408,6 +408,7 @@ table {
 
 th, td {
   padding-right: 30px;
+  font-size: 18px;
 }
 
 .back-to-list-link {
@@ -416,5 +417,7 @@ th, td {
 }
 
 .back-to-list-link a {
-  color: #00bc2f;
+  color: #004712;
+  font-weight: bold;
+  font-size: 17px;
 }
