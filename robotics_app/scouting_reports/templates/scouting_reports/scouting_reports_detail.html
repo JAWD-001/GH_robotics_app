@@ -6,58 +6,59 @@
 <div class="title">
     <h1>Scouting Report Table</h1>
 </div>
+<div class="table-container">
+    <table class="table">
+        <tr>
+            <th class="th">Team Name:</th>
+            <td>{{scouting_reports.team}}</td>
+        </tr>
+        <tr>
+            <th>Summary Date:</th>
+            <td>{{scouting_reports.date}}</td>
+        </tr>
+        <tr>
+            <th>Autonomous Scoring:</th>
+            <td>{{scouting_reports.autonomous_scoring}}</td>
+        </tr>
+        <tr>
+            <th>Autonomous Cone Placement:</th>
+            <td>{{scouting_reports.autonomous_cone_placement}}</td>
+        </tr>
+        <tr>
+            <th>Autonomous Parking:</th>
+            <td>{{scouting_reports.parked_autonomously}}</td>
+        </tr>
+        <tr>
+            <th>Partner Wait Time During Clear Out:</th>
+            <td>{{scouting_reports.clear_out_wait_time}}</td>
+        </tr>
+        <tr>
+            <th>Side Cone Stacks:</th>
+            <td>{{scouting_report.side_cone_stacks}}</td>
+        </tr>
+        <tr>
+            <th>Highest Level:</th>
+            <td>{{scouting_reports.cone_stacks_level}}</tr>
+        <tr>
+            <th>Circuit Completed:</th>
+            <td>{{scouting_reports.circuit_completed}}</td>
+        </tr>
+        <tr>
+            <th>Scoring Cap Placed:</th>
+            <td>{{scouting_reports.scoring_cap_placed}}</td>
+        </tr>
+        <tr>
+            <th>Scoring Cap Placement:</th>
+            <td>{{scouting_reports.scoring_cap_placement}}</td>
+        </tr>
+        <tr>
+            <th>Description of Performance:</th>
+            <td>{{scouting_reports.performance_description}}</td>
+        </tr>
+    </table>
+</div>
 
-<table>
-    <tr>
-        <th>Team Name:</th>
-        <td>{{scouting_reports.team}}</td>
-    </tr>
-    <tr>
-        <th>Summary Date:</th>
-        <td>{{scouting_reports.date}}</td>
-    </tr>
-    <tr>
-        <th>Autonomous Scoring:</th>
-        <td>{{scouting_reports.autonomous_scoring}}</td>
-    </tr>
-    <tr>
-        <th>Autonomous Cone Placement:</th>
-        <td>{{scouting_reports.autonomous_cone_placement}}</td>
-    </tr>
-    <tr>
-        <th>Autonomous Parking:</th>
-        <td>{{scouting_reports.parked_autonomously}}</td>
-    </tr>
-    <tr>
-        <th>Partner Wait Time During Clear Out:</th>
-        <td>{{scouting_reports.clear_out_wait_time}}</td>
-    </tr>
-    <tr>
-        <th>Side Cone Stacks:</th>
-        <td>{{scouting_report.side_cone_stacks}}</td>
-    </tr>
-    <tr>
-        <th>Highest Level:</th>
-        <td>{{scouting_reports.cone_stacks_level}}</tr>
-    <tr>
-        <th>Circuit Completed:</th>
-        <td>{{scouting_reports.circuit_completed}}</td>
-    </tr>
-    <tr>
-        <th>Scoring Cap Placed:</th>
-        <td>{{scouting_reports.scoring_cap_placed}}</td>
-    </tr>
-    <tr>
-        <th>Scoring Cap Placement:</th>
-        <td>{{scouting_reports.scoring_cap_placement}}</td>
-    </tr>
-    <tr>
-        <th>Description of Performance:</th>
-        <td>{{scouting_reports.performance_description}}</td>
-    </tr>
-
-</table>
-<div>
+<div class="back-to-list-link">
     <a href="{% url 'scouting:scouting_reports' %}">Back to List</a>
 </div>
 {% endblock %}

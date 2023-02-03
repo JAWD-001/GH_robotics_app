@@ -390,3 +390,31 @@ a:visited {
   font-size: 18px;
   font-weight: bold;
 }
+
+.table-container {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+table {
+  text-align: left;
+  border-spacing: 0 1rem;
+  color: black;
+}
+
+th, td {
+  padding-right: 30px;
+}
+
+.back-to-list-link {
+  display: flex;
+  justify-content: center;
+}
+
+.back-to-list-link a {
+  color: #00bc2f;
+}
