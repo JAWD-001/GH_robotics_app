@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 
 from .models import BuildSummary
+from .forms import BuildSummaryForm
 # Create your views here.
 
 #CLASS BASED VIEW FOR BUILD OPTIONS HOMEPAGE
@@ -19,8 +20,7 @@ class BuildSummariesView(LoginRequiredMixin, ListView):
     paginate_by = 4
 
 class BuildSummariesCreateView(LoginRequiredMixin, CreateView):
-    model = BuildSummary
-    fields = "__all__"
+    form_class = BuildSummaryForm
     success_url = reverse_lazy('builds:build_summaries')
     template_name = 'build_summaries/build_summaries_form.html'
 

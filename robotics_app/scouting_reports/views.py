@@ -1,6 +1,8 @@
 from django.views.generic import TemplateView, DetailView, CreateView, ListView
 from .models import ScoutingReport
 
+from .forms import ScoutingReportForm
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.urls import reverse_lazy
@@ -15,8 +17,7 @@ class ScoutingReportsView(LoginRequiredMixin, ListView):
     paginate_by = 2
 
 class ScoutingReportCreateView(LoginRequiredMixin,CreateView):
-    model = ScoutingReport
-    fields = '__all__'
+    form_class = ScoutingReportForm
     success_url = reverse_lazy('scouting:scouting_reports')
     template_name = 'scouting_reports/scouting_reports_form.html'
 
