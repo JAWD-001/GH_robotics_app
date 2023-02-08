@@ -29,6 +29,12 @@ class CreateUserForm(UserCreationForm):
     use_required_attribute = False
     password1 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Password - Min of 9 alphanumeric characters and 1 special character'}))
     password2 = forms.CharField(max_length=16, widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password'}))
+
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if "@pinecrest.edu" not in data:
+            raise forms.ValidationError("You must have a PC email")
+        return data
     class Meta(UserCreationForm.Meta):
         model = Users
         fields = ['first_name','last_name','username','email','grad_year']
