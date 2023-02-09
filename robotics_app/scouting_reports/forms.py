@@ -9,5 +9,4 @@ class ScoutingReportForm(forms.ModelForm):
     class Meta:
         model = ScoutingReport
         fields = '__all__'
-        widgets = {'date': widgets.SelectDateWidget()
-        }
+        widgets = {'date': widgets.TextInput(attrs={'type':'date'})}

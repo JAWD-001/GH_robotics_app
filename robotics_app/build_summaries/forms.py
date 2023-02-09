@@ -8,4 +8,4 @@ class BuildSummaryForm(forms.ModelForm):
     class Meta:
         model = BuildSummary
         fields = ['subteam', 'summary_date', 'daily_goal', 'work_accomplished', 'challenges_faced', 'tomorrow_goal', 'build_summary_image']
-        widgets = {'summary_date': widgets.SelectDateWidget()}
+        widgets = {'summary_date': widgets.NumberInput(attrs={'type': 'date'})}

@@ -81,6 +81,12 @@ body {
   border-radius: 3px;
 }
 
+.btn:hover {
+  background-color: white; /* Green */
+  border: #004712 2px;
+  color: #004712;
+}
+
 
 .btn-cards {
   background-color: #004712; /* Green */
@@ -357,15 +363,15 @@ a:visited {
   width: 60%;
   display: flex;
   justify-content: start;
-  gap: 10px;
 }
 
 .scouting-report-label {
   min-width: 160px;
   text-align: left;
   font-size: 13px;
-  margin-right: 120px;
-  flex-wrap: wrap;
+  margin-left: 60px;
+  margin-right: 90px;
+  word-wrap: break-word;
 }
 
 .pagination-container{
