@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm, Password
 from django import forms
 from .models import Users
 from django.contrib.auth.password_validation import validate_password
-from django.core.validators import MinLengthValidator
+
 from django.contrib.auth import get_user_model
 
 Users = get_user_model()
@@ -57,7 +57,8 @@ class CustomUserChangeForm(UserChangeForm):
     class Meta(UserChangeForm.Meta):
         model = Users
         fields = '__all__'
-        
+
+
 class CustomPasswordResetForm(PasswordResetForm):
     email = forms.EmailField(widget=TextInput(attrs={'placeholder':'Email'}))
     class Meta:
