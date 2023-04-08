@@ -8,6 +8,7 @@ from django.contrib.auth import get_user_model
 
 Users = get_user_model()
 
+
 class LoginForm(AuthenticationForm):
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
@@ -35,22 +36,23 @@ class CreateUserForm(UserCreationForm):
         if "@pinecrest.edu" not in data:
             raise forms.ValidationError("You must have a PC email")
         return data
-    class Meta(UserCreationForm.Meta):
-        model = Users
-        fields = ['first_name','last_name','username','email','grad_year']
-        error_messages = {
-            'first_name':{'required': 'First name cannot be blank or null', 'min_length': 'First name must be at least 2 characters long'},
-            'last_name':{'required': 'Last name cannot be blank or null','min_length': 'Last name must be at least 2 characters long'},
-            'username':{'required': 'Username cannot be blank or null', 'min_length': 'Username must be at least 2 characters long'},
-            'email':{'required': 'Email cannot be null or blank', 'required': 'Grad Year cannot be blank or null'}}
-        widgets = {
-            'first_name':TextInput(attrs={'placeholder': 'First Name'}),
-            'last_name':TextInput(attrs={'placeholder':'Last Name'}),
-            'username':TextInput(attrs={'placeholder':'Username'}),
-            'email':TextInput(attrs={'placeholder':'Email'}),
-            'grad_year':TextInput(attrs={'placeholder':'Grad Year'}),
-            'password':PasswordInput(attrs={'placeholder':'Password from model'}),
-        }
+        class Meta(UserCreationForm.Meta):
+            model = Users
+            fields = ['first_name','last_name','username','email','grad_year']
+            error_messages = {
+                'first_name':{'required': 'First name cannot be blank or null', 'min_length': 'First name must be at least 2 characters long'},
+                'last_name':{'required': 'Last name cannot be blank or null','min_length': 'Last name must be at least 2 characters long'},
+                'username':{'required': 'Username cannot be blank or null', 'min_length': 'Username must be at least 2 characters long'},
+                'email':{'required': 'Email cannot be null or blank', 'required': 'Grad Year cannot be blank or null'}
+            }
+            widgets = {
+                'first_name':TextInput(attrs={'placeholder': 'First Name'}),
+                'last_name':TextInput(attrs={'placeholder':'Last Name'}),
+                'username':TextInput(attrs={'placeholder':'Username'}),
+                'email':TextInput(attrs={'placeholder':'Email'}),
+                'grad_year':TextInput(attrs={'placeholder':'Grad Year'}),
+                'password':PasswordInput(attrs={'placeholder':'Password from model'}),
+            }
 
         
 class CustomUserChangeForm(UserChangeForm):
@@ -65,7 +67,7 @@ class CustomPasswordResetForm(PasswordResetForm):
         model = PasswordResetForm
         fields = ['email']
         widgets = {
-            'email':TextInput(attrs={'placeholder':'Email'}),
+            'email': TextInput(attrs={'placeholder':'Email'}),
         }
 
 
